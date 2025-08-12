@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
-import restaurantInterior from 'figma:asset/2c99c53c0f50e5cf9182c5c3ce02df9316d71fd2.png'
-import curryDish from 'figma:asset/4a4d01f71012b316635e9f7536939459e56d9896.png'
-import grilledFish from 'figma:asset/10d817702c2b0356be960e78888c4623bba36f00.png'
-import diningTable from 'figma:asset/a221ffbc6bfa9ded791962afa1ecd0aa25bd5fc9.png'
-import spicyChicken from 'figma:asset/4577f7d3b5ba863677bf6bb020d31755981622fc.png'
-import tandooriPlatter from 'figma:asset/d5045f0357bc07ceb5879cdbc7836337a33d9a5a.png'
+// Placeholder images - replace with actual images when available
+const restaurantInterior = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+const curryDish = 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+const grilledFish = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+const diningTable = 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+const spicyChicken = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+const tandooriPlatter = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Gallery = () => {

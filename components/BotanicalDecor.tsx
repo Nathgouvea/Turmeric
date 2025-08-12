@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 
 interface BotanicalDecorProps {
   position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
