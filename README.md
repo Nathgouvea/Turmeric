@@ -1,144 +1,178 @@
-# Turmeric Restaurant Website
+# Turmeric حلال Pakistani & Indian Restaurant Website
 
-A modern, responsive restaurant website built with React, TypeScript, and Tailwind CSS. Features include multi-language support, online reservations, and a beautiful gallery showcasing the restaurant's atmosphere and cuisine.
+A modern, responsive website for Turmeric Restaurant in Porto, Portugal. Built with React, TypeScript, Tailwind CSS, and deployed as a static site on GitHub Pages.
 
-## 🚀 Features
+## 🌟 Features
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Multi-language Support**: Built-in language switching functionality
-- **Online Reservations**: Integrated booking system
-- **Modern UI Components**: Beautiful, accessible components using shadcn/ui
-- **TypeScript**: Full type safety throughout the application
-- **Supabase Integration**: Backend services for data management
+- **Bilingual Support**: English and Portuguese
+- **Responsive Design**: Mobile-first approach with elegant animations
+- **Modern UI**: Beautiful design with botanical elements and luxury feel
+- **Interactive Components**: Smooth animations and hover effects
+- **Contact Forms**: Integrated with Formspree for reservation handling
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- **Fast Loading**: Optimized images and efficient code splitting
 
-## 🛠️ Tech Stack
+## 🚀 Quick Start
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **UI Components**: shadcn/ui
-- **Backend**: Supabase
-- **Icons**: Lucide React
+### Prerequisites
 
-## 📋 Prerequisites
-
-- Node.js 18.0.0 or higher
-- npm 8.0.0 or higher
+- Node.js 18+
+- npm or yarn
 - Git
 
-## 🚀 Getting Started
+### Local Development
 
-### 1. Clone the repository
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/turmeric-restaurant.git
 cd turmeric-restaurant
 ```
 
-### 2. Install dependencies
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### 3. Set up environment variables
-
-Create a `.env` file in the root directory:
-
-```bash
-cp .env.example .env
-```
-
-Fill in your Supabase credentials:
-
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-### 4. Start the development server
+3. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-The application will open at [http://localhost:3000](http://localhost:3000).
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 📦 Deployment to GitHub Pages
+
+### Automatic Deployment (Recommended)
+
+The repository includes a GitHub Actions workflow that automatically deploys the site when you push to the main branch.
+
+1. **Enable GitHub Pages**:
+
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Under "Source", select "GitHub Actions"
+
+2. **Custom Domain Setup**:
+
+   - The site is configured for the custom domain `turmeric.restaurant`
+   - A `CNAME` file is included in the `public/` directory
+   - The `base` path in `vite.config.ts` is set to `/` for custom domain
+
+3. **Push to main branch**:
+
+```bash
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+```
+
+The site will be automatically built and deployed to `turmeric.restaurant`! 🎉
+
+### Manual Deployment
+
+If you prefer manual deployment:
+
+```bash
+npm run build
+npm run deploy
+```
+
+## 🛠️ Built With
+
+- **React 18** - UI Framework
+- **TypeScript** - Type Safety
+- **Tailwind CSS v4** - Styling
+- **Motion** - Animations
+- **Vite** - Build Tool
+- **Lucide React** - Icons
+- **Radix UI** - Accessible Components
 
 ## 📁 Project Structure
 
 ```
-turmeric/
-├── components/          # Reusable UI components
-│   ├── ui/             # shadcn/ui components
-│   └── ...             # Custom components
-├── contexts/            # React contexts (Language, Router)
+├── components/           # React components
+│   ├── ui/              # Reusable UI components
+│   └── figma/           # Figma-specific components
+├── contexts/            # React contexts
 ├── pages/               # Page components
-├── styles/              # Global styles and Tailwind config
-├── supabase/            # Supabase functions and configuration
-├── utils/               # Utility functions
-├── App.tsx              # Main application component
-└── main.tsx             # Application entry point
+├── styles/              # CSS files
+├── public/              # Static assets
+└── utils/               # Utility functions
 ```
 
-## 🏗️ Available Scripts
+## 🎨 Customization
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
+### Colors
 
-## 🌐 Deployment
+The primary brand color is defined in the CSS variables:
 
-### GitHub Pages
+- Primary Gold: `#e0aa22`
+- Update in `styles/globals.css` if needed
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+### Fonts
 
-2. Deploy to GitHub Pages using GitHub Actions or manually upload the `dist` folder.
+Using Google Fonts:
 
-### Vercel
+- **Great Vibes** - For elegant headings
+- **Inter** - For body text
 
-1. Connect your GitHub repository to Vercel
-2. Vercel will automatically detect the Vite configuration and deploy
+### Content
 
-### Netlify
+Update content by modifying the translation files in the language context or directly in components.
 
-1. Connect your GitHub repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `dist`
+## 📧 Contact Form
+
+The reservation form uses [Formspree](https://formspree.io/) for handling submissions. To update:
+
+1. Create a Formspree account
+2. Get your form endpoint
+3. Update the endpoint in `pages/ReservationsPage.tsx`
 
 ## 🔧 Configuration
 
-### Tailwind CSS
+### Environment Variables
 
-The project uses Tailwind CSS with custom color schemes and typography. Configuration can be found in `tailwind.config.js`.
+No environment variables are needed for the static build. All configuration is done through the codebase.
 
-### Supabase
+### SEO
 
-Ensure your Supabase project is properly configured with the necessary tables and functions for reservations and other features.
+Update meta tags in `index.html` for your specific deployment:
+
+- Title tags
+- Meta descriptions
+- Open Graph tags
+- Favicon
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## 📝 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS framework
-- [Vite](https://vitejs.dev/) for fast build tooling
-- [Supabase](https://supabase.com/) for backend services
+- Design inspiration from modern restaurant websites
+- Images from Unsplash
+- Icons from Lucide React
+- UI components from Radix UI
 
-## 📞 Support
+---
 
-If you have any questions or need help, please open an issue on GitHub or contact the development team.
+**Turmeric Restaurant** - R. Formosa 429, 4000-253 Porto, Portugal  
+📞 +351 22 208 6926 | 🕒 Daily 15:00–23:00

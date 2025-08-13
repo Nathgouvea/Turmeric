@@ -1,15 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Clock, CheckCircle } from 'lucide-react'
+import { motion } from 'motion/react'
+import { Calendar, Clock, Users, Phone, Mail, CheckCircle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
-import { Select } from './ui/select'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
-import { useLanguage } from '../contexts/LanguageContext'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 const Reservations = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -156,21 +155,31 @@ const Reservations = () => {
                       <div className="space-y-2">
                         <Label htmlFor="time">Time *</Label>
                         <Select value={formData.time} onValueChange={(value) => handleInputChange('time', value)}>
-                          {timeSlots.map((slot) => (
-                            <option key={slot} value={slot}>
-                              {slot}
-                            </option>
-                          ))}
+                          <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
+                            <SelectValue placeholder="Select time" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {timeSlots.map((slot) => (
+                              <SelectItem key={slot} value={slot}>
+                                {slot}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
                         </Select>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="guests">Guests *</Label>
                         <Select value={formData.guests} onValueChange={(value) => handleInputChange('guests', value)}>
-                          {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
-                            <option key={num} value={num.toString()}>
-                              {num} {num === 1 ? 'Guest' : 'Guests'}
-                            </option>
-                          ))}
+                          <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
+                            <SelectValue placeholder="Number" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
+                              <SelectItem key={num} value={num.toString()}>
+                                {num} {num === 1 ? 'Guest' : 'Guests'}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
                         </Select>
                       </div>
                     </div>

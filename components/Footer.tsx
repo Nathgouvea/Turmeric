@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { MapPin, Phone, Mail, Heart, Star } from 'lucide-react'
 
 const Footer = () => {

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Globe } from 'lucide-react'
 import { Button } from './ui/button'
 import { useLanguage } from '../contexts/LanguageContext'

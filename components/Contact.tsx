@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { MapPin, Phone, Clock, Star, ExternalLink } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import OpeningStatus from './OpeningStatus'
