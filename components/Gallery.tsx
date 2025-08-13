@@ -11,7 +11,7 @@ const Gallery = () => {
 
   const galleryItems = [
     {
-      src: "/Images/the-ambient.jpg",
+      src: "/the-ambient.jpg",
       title: t("language") === "pt" ? "Ambiente Elegante" : "Elegant Ambiance",
       description:
         t("language") === "pt"
@@ -20,7 +20,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Interior" : "Interior",
     },
     {
-      src: "/Images/family.dining-experience.jpeg",
+      src: "/family.dining-experience.jpeg",
       title:
         t("language") === "pt"
           ? "Experiência Familiar"
@@ -32,7 +32,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Experiência" : "Experience",
     },
     {
-      src: "/Images/Chicken-Lollypop.jpeg",
+      src: "/Chicken-Lollypop.jpeg",
       title: t("language") === "pt" ? "Chicken Lollypop" : "Chicken Lollypop",
       description:
         t("language") === "pt"
@@ -41,7 +41,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: "/Images/chicken-saomsa.jpeg",
+      src: "/chicken-saomsa.jpeg",
       title: t("language") === "pt" ? "Chicken Samosa" : "Chicken Samosa",
       description:
         t("language") === "pt"
@@ -50,7 +50,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: "/Images/garlicnan-chicken-Kadhai.jpg",
+      src: "/garlicnan-chicken-Kadhai.jpg",
       title:
         t("language") === "pt"
           ? "Chicken Kadhai com Garlic Naan"
@@ -62,7 +62,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Pratos Principais" : "Main Dishes",
     },
     {
-      src: "/Images/grill-Tandoori-Fish.jpg",
+      src: "/grill-Tandoori-Fish.jpg",
       title:
         t("language") === "pt"
           ? "Peixe Tandoori Grelhado"
@@ -74,7 +74,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Grelhados" : "Grills",
     },
     {
-      src: "/Images/Onion-Bhaji.jpg",
+      src: "/Onion-Bhaji.jpg",
       title: t("language") === "pt" ? "Onion Bhaji" : "Onion Bhaji",
       description:
         t("language") === "pt"
@@ -83,7 +83,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: "/Images/mango-lassi.jpeg",
+      src: "/mango-lassi.jpeg",
       title: t("language") === "pt" ? "Mango Lassi" : "Mango Lassi",
       description:
         t("language") === "pt"
@@ -92,7 +92,7 @@ const Gallery = () => {
       category: t("language") === "pt" ? "Bebidas" : "Beverages",
     },
     {
-      src: "/Images/Rasmalai-Kheer-dessert.jpeg",
+      src: "/Rasmalai-Kheer-dessert.jpeg",
       title: t("language") === "pt" ? "Rasmalai e Kheer" : "Rasmalai and Kheer",
       description:
         t("language") === "pt"
