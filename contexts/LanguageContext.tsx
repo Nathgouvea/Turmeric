@@ -121,16 +121,17 @@ const translations = {
     "reservations.form.requests": "Special Requests (Optional)",
     "reservations.form.submit": "Book Table",
     "reservations.form.confirmation":
-      "* We'll confirm your reservation within 6 hours via phone or email",
+      "* We'll confirm your reservation within 24 hours via phone or email",
     "reservations.form.success.title": "Reservation Submitted!",
     "reservations.form.success.message":
-      "Thank you for choosing Turmeric. We'll contact you within 6 hours to confirm your reservation.",
+      "Thank you for choosing Turmeric. We'll contact you within 24 hours to confirm your reservation.",
     "reservations.form.placeholder.name": "Enter your full name",
     "reservations.form.placeholder.phone": "+351 XXX XXX XXX",
     "reservations.form.placeholder.email": "your.email@example.com",
     "reservations.form.placeholder.time": "Select time",
     "reservations.form.placeholder.guests": "Number",
-    "reservations.form.placeholder.requests": "Any special dietary requirements, celebration notes, or seating preferences...",
+    "reservations.form.placeholder.requests":
+      "Any special dietary requirements, celebration notes, or seating preferences...",
     "reservations.form.guest.singular": "Guest",
     "reservations.form.guest.plural": "Guests",
     "reservations.hours.title": "Operating Hours",
@@ -285,16 +286,17 @@ const translations = {
     "reservations.form.requests": "Pedidos Especiais (Opcional)",
     "reservations.form.submit": "Reservar Mesa",
     "reservations.form.confirmation":
-      "* Confirmaremos a sua reserva em 6 horas por telefone ou email",
+      "* Confirmaremos a sua reserva em 24 horas por telefone ou email",
     "reservations.form.success.title": "Reserva Enviada!",
     "reservations.form.success.message":
-      "Obrigado por escolher o Turmeric. Entraremos em contacto consigo em 6 horas para confirmar a sua reserva.",
+      "Obrigado por escolher o Turmeric. Entraremos em contacto consigo em 24 horas para confirmar a sua reserva.",
     "reservations.form.placeholder.name": "Introduza o seu nome completo",
     "reservations.form.placeholder.phone": "+351 XXX XXX XXX",
     "reservations.form.placeholder.email": "o.seu.email@exemplo.com",
     "reservations.form.placeholder.time": "Selecionar hora",
     "reservations.form.placeholder.guests": "Número",
-    "reservations.form.placeholder.requests": "Quaisquer requisitos dietéticos especiais, notas de celebração ou preferências de lugar...",
+    "reservations.form.placeholder.requests":
+      "Quaisquer requisitos dietéticos especiais, notas de celebração ou preferências de lugar...",
     "reservations.form.guest.singular": "Pessoa",
     "reservations.form.guest.plural": "Pessoas",
     "reservations.hours.title": "Horário de Funcionamento",
