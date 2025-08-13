@@ -1,99 +1,112 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X } from 'lucide-react'
-// Placeholder images - replace with actual restaurant photos when available
-const restaurantInterior = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-const curryDish = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-const grilledFish = 'https://images.unsplash.com/photo-1563379091339-03246963d293?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-const diningTable = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-const spicyChicken = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-const tandooriPlatter = 'https://images.unsplash.com/photo-1563379091339-03246963d293?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
-  const { t } = useLanguage()
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const galleryItems = [
     {
-      src: restaurantInterior,
-      title: t('language') === 'pt' ? 'Espaço Elegante' : 'Elegant Dining Space',
-      description: t('language') === 'pt' 
-        ? 'Experiencie o jantar de luxo no nosso restaurante lindamente projetado com comodidades modernas e charme tradicional.'
-        : 'Experience luxury dining in our beautifully designed restaurant with modern amenities and traditional charm.',
-      category: t('language') === 'pt' ? 'Interior' : 'Interior'
+      src: "/Images/the-ambient.jpg",
+      title: t("language") === "pt" ? "Ambiente Elegante" : "Elegant Ambiance",
+      description:
+        t("language") === "pt"
+          ? "O nosso restaurante lindamente projetado com comodidades modernas e charme tradicional."
+          : "Our beautifully designed restaurant with modern amenities and traditional charm.",
+      category: t("language") === "pt" ? "Interior" : "Interior",
     },
     {
-      src: diningTable,
-      title: t('language') === 'pt' ? 'Mesa Familiar' : 'Family Dining Experience',
-      description: t('language') === 'pt'
-        ? 'Desfrute de uma refeição em família com os nossos pratos autênticos num ambiente acolhedor.'
-        : 'Enjoy a family meal with our authentic dishes in a warm, welcoming atmosphere.',
-      category: t('language') === 'pt' ? 'Experiência' : 'Experience'
+      src: "/Images/family.dining-experience.jpeg",
+      title:
+        t("language") === "pt"
+          ? "Experiência Familiar"
+          : "Family Dining Experience",
+      description:
+        t("language") === "pt"
+          ? "Desfrute de uma refeição em família com os nossos pratos autênticos num ambiente acolhedor."
+          : "Enjoy a family meal with our authentic dishes in a warm, welcoming atmosphere.",
+      category: t("language") === "pt" ? "Experiência" : "Experience",
     },
     {
-      src: spicyChicken,
-      title: t('language') === 'pt' ? 'Frango Tandoori' : 'Tandoori Chicken Wings',
-      description: t('language') === 'pt'
-        ? 'Asas de frango marinadas com especiarias tradicionais e grelhadas na perfeição.'
-        : 'Chicken wings marinated with traditional spices and grilled to perfection.',
-      category: t('language') === 'pt' ? 'Tandoori' : 'Tandoori'
+      src: "/Images/Chicken-Lollypop.jpeg",
+      title: t("language") === "pt" ? "Chicken Lollypop" : "Chicken Lollypop",
+      description:
+        t("language") === "pt"
+          ? "Frango crocante e suculento servido como um lollypop, uma deliciosa entrada."
+          : "Crispy and juicy chicken served as a lollypop, a delicious appetizer.",
+      category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: tandooriPlatter,
-      title: t('language') === 'pt' ? 'Prato Misto' : 'Mixed Grill Platter',
-      description: t('language') === 'pt'
-        ? 'Uma seleção dos nossos melhores pratos grelhados com legumes frescos e molhos especiais.'
-        : 'A selection of our finest grilled dishes with fresh vegetables and special sauces.',
-      category: t('language') === 'pt' ? 'Grelhados' : 'Grills'
+      src: "/Images/chicken-saomsa.jpeg",
+      title: t("language") === "pt" ? "Chicken Samosa" : "Chicken Samosa",
+      description:
+        t("language") === "pt"
+          ? "Samosas de frango crocantes recheados com especiarias aromáticas e ervas frescas."
+          : "Crispy chicken samosas filled with aromatic spices and fresh herbs.",
+      category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: curryDish,
-      title: t('language') === 'pt' ? 'Caril Especial' : 'Signature Curry',
-      description: t('language') === 'pt'
-        ? 'O nosso caril especial do chef com especiarias ricas e aromáticas e um equilíbrio perfeito de sabores.'
-        : 'Our chef\'s special curry with rich, aromatic spices and a perfect balance of flavors.',
-      category: t('language') === 'pt' ? 'Caril' : 'Curry'
+      src: "/Images/garlicnan-chicken-Kadhai.jpg",
+      title:
+        t("language") === "pt"
+          ? "Chicken Kadhai com Garlic Naan"
+          : "Chicken Kadhai with Garlic Naan",
+      description:
+        t("language") === "pt"
+          ? "Frango Kadhai tradicional servido com pão naan de alho fresco e aromático."
+          : "Traditional chicken kadhai served with fresh and aromatic garlic naan bread.",
+      category: t("language") === "pt" ? "Pratos Principais" : "Main Dishes",
     },
     {
-      src: grilledFish,
-      title: t('language') === 'pt' ? 'Peixe Especial' : 'Grilled Fish Special',
-      description: t('language') === 'pt'
-        ? 'Peixe fresco marinado com especiarias tradicionais e grelhado na perfeição, servido com vegetais frescos.'
-        : 'Fresh fish marinated with traditional spices and grilled to perfection, served with fresh vegetables.',
-      category: t('language') === 'pt' ? 'Peixe' : 'Fish'
-    },
-    // Additional placeholder images from Unsplash
-    {
-      src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: t('language') === 'pt' ? 'Biryani Autêntico' : 'Authentic Biryani',
-      description: t('language') === 'pt'
-        ? 'Arroz basmati perfumado em camadas com carne tenra e especiarias aromáticas, uma verdadeira obra-prima.'
-        : 'Fragrant basmati rice layered with tender meat and aromatic spices, a true masterpiece.',
-      category: 'Biryani'
+      src: "/Images/grill-Tandoori-Fish.jpg",
+      title:
+        t("language") === "pt"
+          ? "Peixe Tandoori Grelhado"
+          : "Grilled Tandoori Fish",
+      description:
+        t("language") === "pt"
+          ? "Peixe fresco marinado com especiarias tandoori e grelhado na perfeição no forno tradicional."
+          : "Fresh fish marinated with tandoori spices and grilled to perfection in our traditional oven.",
+      category: t("language") === "pt" ? "Grelhados" : "Grills",
     },
     {
-      src: 'https://images.unsplash.com/photo-1563379091339-03246963d293?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: t('language') === 'pt' ? 'Naan Fresco' : 'Fresh Naan Bread',
-      description: t('language') === 'pt'
-        ? 'Pão naan macio e fofo cozido fresco no nosso forno tandoor, perfeito com qualquer caril.'
-        : 'Soft, fluffy naan bread baked fresh in our tandoor oven, perfect with any curry.',
-      category: t('language') === 'pt' ? 'Pão' : 'Bread'
+      src: "/Images/Onion-Bhaji.jpg",
+      title: t("language") === "pt" ? "Onion Bhaji" : "Onion Bhaji",
+      description:
+        t("language") === "pt"
+          ? "Cebolas fatiadas empanadas e fritas com especiarias indianas, uma entrada crocante e saborosa."
+          : "Sliced onions battered and fried with Indian spices, a crispy and flavorful appetizer.",
+      category: t("language") === "pt" ? "Entradas" : "Appetizers",
     },
     {
-      src: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: t('language') === 'pt' ? 'Sobremesas Deliciosas' : 'Delectable Desserts',
-      description: t('language') === 'pt'
-        ? 'Doces tradicionais indianos e sobremesas para completar a sua experiência gastronómica.'
-        : 'Traditional Indian sweets and desserts to complete your dining experience.',
-      category: t('language') === 'pt' ? 'Sobremesas' : 'Desserts'
-    }
-  ]
+      src: "/Images/mango-lassi.jpeg",
+      title: t("language") === "pt" ? "Mango Lassi" : "Mango Lassi",
+      description:
+        t("language") === "pt"
+          ? "Bebida tradicional indiana feita com manga fresca e iogurte, refrescante e nutritiva."
+          : "Traditional Indian drink made with fresh mango and yogurt, refreshing and nutritious.",
+      category: t("language") === "pt" ? "Bebidas" : "Beverages",
+    },
+    {
+      src: "/Images/Rasmalai-Kheer-dessert.jpeg",
+      title: t("language") === "pt" ? "Rasmalai e Kheer" : "Rasmalai and Kheer",
+      description:
+        t("language") === "pt"
+          ? "Sobremesas tradicionais indianas: Rasmalai suave e Kheer cremoso para completar a sua refeição."
+          : "Traditional Indian desserts: soft Rasmalai and creamy Kheer to complete your meal.",
+      category: t("language") === "pt" ? "Sobremesas" : "Desserts",
+    },
+  ];
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-accent to-white">
+    <section
+      id="gallery"
+      className="py-20 bg-gradient-to-b from-accent to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -104,10 +117,10 @@ const Gallery = () => {
           className="text-center mb-16"
         >
           <h2 className="font-great-vibes text-5xl md:text-6xl text-primary-gold mb-4">
-            {t('gallery.title')}
+            {t("gallery.title")}
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            {t('gallery.subtitle')}
+            {t("gallery.subtitle")}
           </p>
         </motion.div>
 
@@ -132,7 +145,9 @@ const Gallery = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-white text-center p-4">
-                      <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                      <h3 className="font-semibold text-lg mb-2">
+                        {item.title}
+                      </h3>
                       <p className="text-sm opacity-90">{item.description}</p>
                     </div>
                   </div>
@@ -194,30 +209,31 @@ const Gallery = () => {
           className="mt-16 text-center bg-primary-gold rounded-2xl p-8 text-white"
         >
           <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-            {t('language') === 'pt' ? 'Pronto para Criar as Suas Próprias Memórias?' : 'Ready to Create Your Own Memories?'}
+            {t("language") === "pt"
+              ? "Pronto para Criar as Suas Próprias Memórias?"
+              : "Ready to Create Your Own Memories?"}
           </h3>
           <p className="text-lg mb-6 opacity-90">
-            {t('language') === 'pt' 
-              ? 'Junte-se a nós para uma experiência gastronómica inesquecível onde cada prato conta uma história'
-              : 'Join us for an unforgettable dining experience where every dish tells a story'
-            }
+            {t("language") === "pt"
+              ? "Junte-se a nós para uma experiência gastronómica inesquecível onde cada prato conta uma história"
+              : "Join us for an unforgettable dining experience where every dish tells a story"}
           </p>
           <motion.button
             className="bg-white text-primary-gold px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              document.querySelector('#reservations')?.scrollIntoView({
-                behavior: 'smooth'
-              })
+              document.querySelector("#reservations")?.scrollIntoView({
+                behavior: "smooth",
+              });
             }}
           >
-            {t('language') === 'pt' ? 'Reserve a Sua Mesa' : 'Book Your Table'}
+            {t("language") === "pt" ? "Reserve a Sua Mesa" : "Book Your Table"}
           </motion.button>
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;

@@ -1,21 +1,24 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Button } from './ui/button'
-import { ImageWithFallback } from './figma/ImageWithFallback'
-import { useLanguage } from '../contexts/LanguageContext'
-import { useRouter } from '../contexts/RouterContext'
+import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useRouter } from "../contexts/RouterContext";
 
 const Hero = () => {
-  const { t } = useLanguage()
-  const { navigateTo } = useRouter()
+  const { t } = useLanguage();
+  const { navigateTo } = useRouter();
 
   const scrollToSection = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
@@ -35,7 +38,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           {/* Restaurant Name */}
-          <motion.h1 
+          <motion.h1
             className="font-great-vibes text-6xl md:text-8xl lg:text-9xl text-primary-gold mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -51,7 +54,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            {t('hero.title')}
+            {t("hero.title")}
           </motion.h2>
 
           {/* Description */}
@@ -61,7 +64,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            {t('hero.subtitle')}
+            {t("hero.subtitle")}
           </motion.p>
 
           {/* Buttons */}
@@ -71,20 +74,20 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <Button 
+            <Button
               size="lg"
               className="bg-primary-gold hover:bg-yellow-600 text-white px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => scrollToSection('#menu')}
+              onClick={() => scrollToSection("#menu")}
             >
-              {t('hero.cta.menu')}
+              {t("hero.cta.menu")}
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white px-8 py-4 text-lg shadow-xl transition-all duration-300 transform hover:scale-105 bg-transparent"
-              onClick={() => navigateTo('reservations')}
+              onClick={() => navigateTo("reservations")}
             >
-              {t('hero.cta.reserve')}
+              {t("hero.cta.reserve")}
             </Button>
           </motion.div>
         </motion.div>
@@ -94,7 +97,7 @@ const Hero = () => {
       <div className="absolute top-1/4 left-10 w-16 h-16 border border-primary-gold/20 rounded-full animate-pulse"></div>
       <div className="absolute bottom-1/3 right-10 w-12 h-12 border border-primary-gold/20 rounded-full animate-pulse delay-1000"></div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

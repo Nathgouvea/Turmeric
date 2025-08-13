@@ -1,17 +1,16 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Star, ExternalLink } from 'lucide-react'
-import { Button } from './ui/button'
-import { useLanguage } from '../contexts/LanguageContext'
+import { motion } from "framer-motion";
+import { Star, ExternalLink } from "lucide-react";
+import { Button } from "./ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Reviews = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section className="py-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
         {/* Section Header - Compact */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -21,10 +20,10 @@ const Reviews = () => {
           className="text-center mb-6"
         >
           <h2 className="font-great-vibes text-3xl md:text-4xl text-primary-gold mb-1">
-            {t('reviews.title')}
+            {t("reviews.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            {t('reviews.subtitle')}
+            {t("reviews.subtitle")}
           </p>
         </motion.div>
 
@@ -47,12 +46,19 @@ const Reviews = () => {
                   <span className="text-white text-sm font-bold">G</span>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-800">Google Reviews</h3>
+                  <h3 className="text-sm font-semibold text-gray-800">
+                    Google Reviews
+                  </h3>
                   <div className="flex items-center">
-                    <span className="text-lg font-bold text-gray-800 mr-1">4.9</span>
+                    <span className="text-lg font-bold text-gray-800 mr-1">
+                      4.9
+                    </span>
                     <div className="flex space-x-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="w-3 h-3 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
                   </div>
@@ -60,14 +66,21 @@ const Reviews = () => {
               </div>
               <div className="text-right">
                 <p className="text-xs text-gray-600 mb-1">
-                  {t('language') === 'pt' ? '2,500+ avaliações' : '2,500+ Reviews'}
+                  {t("language") === "pt"
+                    ? "2,500+ avaliações"
+                    : "2,500+ Reviews"}
                 </p>
                 <Button
                   size="sm"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-xs"
-                  onClick={() => window.open('https://www.google.com/maps/place/Turmeric+%D8%AD%D9%84%D8%A7%D9%84+Restaurant/@41.1496032,-8.6110333,17z/data=!3m1!4b1!4m6!3m5!1s0xd2464e4c99d0a19:0x7d7d0b1a0b1a0b1a!8m2!3d41.1496032!4d-8.6084584!16s%2Fg%2F11y0z0z0z0', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://share.google/apJ3zKDgyE2TRa0pm",
+                      "_blank"
+                    )
+                  }
                 >
-                  {t('language') === 'pt' ? 'Ver' : 'View'}
+                  {t("language") === "pt" ? "Ver" : "View"}
                   <ExternalLink className="w-2 h-2 ml-1" />
                 </Button>
               </div>
@@ -85,12 +98,19 @@ const Reviews = () => {
                   <span className="text-white text-sm font-bold">T</span>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-800">TripAdvisor</h3>
+                  <h3 className="text-sm font-semibold text-gray-800">
+                    TripAdvisor
+                  </h3>
                   <div className="flex items-center">
-                    <span className="text-lg font-bold text-gray-800 mr-1">4.8</span>
+                    <span className="text-lg font-bold text-gray-800 mr-1">
+                      4.9
+                    </span>
                     <div className="flex space-x-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="w-3 h-3 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
                   </div>
@@ -98,14 +118,19 @@ const Reviews = () => {
               </div>
               <div className="text-right">
                 <p className="text-xs text-gray-600 mb-1">
-                  {t('language') === 'pt' ? '250+ avaliações' : '250+ Reviews'}
+                  {t("language") === "pt" ? "250+ avaliações" : "250+ Reviews"}
                 </p>
                 <Button
                   size="sm"
                   className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 text-xs"
-                  onClick={() => window.open('https://www.tripadvisor.com/Restaurant_Review-g189180-d26847222-Reviews-Turmeric_Restaurant-Porto_Porto_District_Northern_Portugal.html', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://www.tripadvisor.com/Restaurant_Review-g189180-d26847222-Reviews-Turmeric_Restaurant-Porto_Porto_District_Northern_Portugal.html",
+                      "_blank"
+                    )
+                  }
                 >
-                  {t('language') === 'pt' ? 'Ver' : 'View'}
+                  {t("language") === "pt" ? "Ver" : "View"}
                   <ExternalLink className="w-2 h-2 ml-1" />
                 </Button>
               </div>
@@ -124,15 +149,17 @@ const Reviews = () => {
           <div className="flex items-center justify-center space-x-4 text-xs text-gray-600">
             <div className="flex items-center">
               <Star className="w-3 h-3 text-yellow-400 mr-1" />
-              <span>{t('language') === 'pt' ? 'Excelente' : 'Excellent'}</span>
+              <span>{t("language") === "pt" ? "Excelente" : "Excellent"}</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1"></div>
-              <span>{t('language') === 'pt' ? 'Verificado' : 'Verified'}</span>
+              <span>{t("language") === "pt" ? "Verificado" : "Verified"}</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-primary-gold rounded-full mr-1"></div>
-              <span>{t('language') === 'pt' ? 'Recomendado' : 'Recommended'}</span>
+              <span>
+                {t("language") === "pt" ? "Recomendado" : "Recommended"}
+              </span>
             </div>
           </div>
         </motion.div>
@@ -142,7 +169,7 @@ const Reviews = () => {
         <div className="absolute bottom-4 right-4 w-6 h-6 border border-primary-gold/20 rounded-full animate-pulse delay-1000"></div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;
