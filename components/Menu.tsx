@@ -574,6 +574,8 @@ const Menu = () => {
                   : 'border-2 border-gray-200 hover:border-primary-gold hover:text-primary-gold bg-white'
               }`}
               onClick={() => setActiveCategory(category.id)}
+              aria-label={`Filter menu by ${category.name} category`}
+              aria-pressed={activeCategory === category.id}
             >
               <span className="mr-2">{category.icon}</span>
               {category.name}
@@ -670,6 +672,7 @@ const Menu = () => {
                   behavior: 'smooth'
                 })
               }}
+              aria-label={`${t('menu.cta.button')} - Make a reservation`}
             >
               {t('menu.cta.button')}
             </Button>

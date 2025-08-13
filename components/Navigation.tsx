@@ -95,6 +95,8 @@ const Navigation = () => {
               size="sm"
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />

@@ -78,6 +78,7 @@ const Hero = () => {
               size="lg"
               className="bg-primary-gold hover:bg-yellow-600 text-white px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               onClick={() => scrollToSection("#menu")}
+              aria-label={`${t("hero.cta.menu")} - View our menu`}
             >
               {t("hero.cta.menu")}
             </Button>
@@ -86,6 +87,7 @@ const Hero = () => {
               variant="outline"
               className="border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white px-8 py-4 text-lg shadow-xl transition-all duration-300 transform hover:scale-105 bg-transparent"
               onClick={() => navigateTo("reservations")}
+              aria-label={`${t("hero.cta.reserve")} - Make a reservation`}
             >
               {t("hero.cta.reserve")}
             </Button>

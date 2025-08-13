@@ -79,6 +79,9 @@ const Reviews = () => {
                       "_blank"
                     )
                   }
+                  aria-label={`${
+                    t("language") === "pt" ? "Ver" : "View"
+                  } Google reviews`}
                 >
                   {t("language") === "pt" ? "Ver" : "View"}
                   <ExternalLink className="w-2 h-2 ml-1" />
@@ -129,6 +132,9 @@ const Reviews = () => {
                       "_blank"
                     )
                   }
+                  aria-label={`${
+                    t("language") === "pt" ? "Ver" : "View"
+                  } TripAdvisor reviews`}
                 >
                   {t("language") === "pt" ? "Ver" : "View"}
                   <ExternalLink className="w-2 h-2 ml-1" />

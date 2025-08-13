@@ -227,7 +227,10 @@ const Reservations = () => {
                             handleInputChange("time", value)
                           }
                         >
-                          <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
+                          <SelectTrigger 
+                            className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
+                            aria-label={t("reservations.form.time")}
+                          >
                             <SelectValue
                               placeholder={t(
                                 "reservations.form.placeholder.time"
@@ -253,7 +256,10 @@ const Reservations = () => {
                             handleInputChange("guests", value)
                           }
                         >
-                          <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
+                          <SelectTrigger 
+                            className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
+                            aria-label={t("reservations.form.guests")}
+                          >
                             <SelectValue
                               placeholder={t(
                                 "reservations.form.placeholder.guests"
@@ -298,6 +304,7 @@ const Reservations = () => {
                       type="submit"
                       className="w-full bg-primary-gold hover:bg-yellow-600 text-white py-3 text-lg font-medium"
                       size="lg"
+                      aria-label={`${t("reservations.form.submit")} reservation form`}
                     >
                       {t("reservations.form.submit")}
                     </Button>

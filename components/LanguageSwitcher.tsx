@@ -22,6 +22,7 @@ const LanguageSwitcher = () => {
         variant="outline"
         size="sm"
         onClick={toggleLanguage}
+        aria-label={`Switch language to ${language === 'en' ? 'Portuguese' : 'English'}`}
         className="flex items-center space-x-2 border-2 border-gray-200 hover:border-primary-gold hover:text-primary-gold transition-all duration-300 bg-white/90 backdrop-blur-sm"
       >
         <Globe className="w-4 h-4" />
