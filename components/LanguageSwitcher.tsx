@@ -15,11 +15,12 @@ const LanguageSwitcher = () => {
     { code: "pt", name: "Português", flag: "🇵🇹" },
     { code: "ar", name: "العربية", flag: "🇸🇦" },
     { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === language);
 
-  const handleLanguageChange = (langCode: "en" | "pt" | "ar" | "fr") => {
+  const handleLanguageChange = (langCode: "en" | "pt" | "ar" | "fr" | "es") => {
     setLanguage(langCode);
     setIsOpen(false);
   };
@@ -63,7 +64,9 @@ const LanguageSwitcher = () => {
             <button
               key={lang.code}
               onClick={() =>
-                handleLanguageChange(lang.code as "en" | "pt" | "ar" | "fr")
+                handleLanguageChange(
+                  lang.code as "en" | "pt" | "ar" | "fr" | "es"
+                )
               }
               className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center space-x-3 ${
                 language === lang.code

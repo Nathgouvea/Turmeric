@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "en" | "pt" | "ar" | "fr";
+type Language = "en" | "pt" | "ar" | "fr" | "es";
 
 interface LanguageContextType {
   language: Language;
@@ -1860,6 +1860,479 @@ const translations = {
     "ui.reportMapError": "Signaler une erreur de carte",
     "ui.madeWith": "Fait avec",
     "ui.by": "par",
+  },
+  es: {
+    // Navigation
+    "nav.home": "Inicio",
+    "nav.about": "Sobre Nosotros",
+    "nav.menu": "Menú",
+    "nav.gallery": "Galería",
+    "nav.reservations": "Reservas",
+    "nav.contact": "Contacto",
+
+    // Hero
+    "hero.title": "Cocina Auténtica Pakistaní e India",
+    "hero.subtitle":
+      "Experimenta el mejor restaurante halal en Oporto con sabores tradicionales, ingredientes premium y ambiente elegante.",
+    "hero.cta.menu": "Ver Menú",
+    "hero.cta.reserve": "Reservar Mesa",
+
+    // Reviews
+    "reviews.title": "Lo Que Dicen Nuestros Clientes",
+    "reviews.subtitle":
+      "Experimenta los sabores auténticos que nos han valido el reconocimiento de los amantes de la gastronomía en todo Oporto",
+    "reviews.google": "Reseñas de Google",
+    "reviews.tripadvisor": "Reseñas de TripAdvisor",
+    "reviews.googleTitle": "Reseñas de Google",
+    "reviews.tripadvisorTitle": "TripAdvisor",
+    "reviews.view": "Ver",
+    "reviews.excellent": "Excelente",
+    "reviews.verified": "Verificado",
+    "reviews.recommended": "Recomendado",
+    "reviews.reviewsCount": "Reseña",
+    "reviews.reviewsCountPlural": "Reseñas",
+
+    // About
+    "about.title": "Nuestra Historia",
+    "about.subtitle":
+      "En Turmeric, llevamos los sabores auténticos de la cocina pakistaní e india a Oporto, combinando recetas tradicionales con una experiencia gastronómica de lujo. Cada plato cuenta una historia de herencia, calidad y pasión por la excelencia.",
+    "about.feature1.title": "Comida de Calidad Premium",
+    "about.feature1.desc":
+      "Obtenemos los mejores ingredientes y especias auténticas para crear platos excepcionales pakistaníes e indios que celebran los sabores tradicionales.",
+    "about.feature2.title": "Personal Profesional y Amigable",
+    "about.feature2.desc":
+      "Nuestro equipo experimentado combina hospitalidad cálida con servicio profesional, garantizando que cada huésped se sienta bienvenido y valorado.",
+    "about.feature3.title": "100% Certificado Halal",
+    "about.feature3.desc":
+      "Cada ingrediente y plato se prepara cuidadosamente según los estándares halal, proporcionando tranquilidad sin comprometer la calidad.",
+    "about.feature4.title": "Atención al Detalle",
+    "about.feature4.desc":
+      "Desde la presentación elegante hasta el servicio personalizado, creemos que el lujo está en los detalles. Cada aspecto de tu experiencia se elabora cuidadosamente.",
+    "about.why.title": "Lo Que Hace Especial a Turmeric",
+    "about.why.recipe.title": "Recetas Auténticas",
+    "about.why.recipe.desc":
+      "Transmitidas a través de generaciones, nuestras recetas mantienen la verdadera esencia de la cocina pakistaní e india.",
+    "about.why.ingredients.title": "Ingredientes Frescos",
+    "about.why.ingredients.desc":
+      "Obtenemos ingredientes premium y frescos diariamente para garantizar que cada plato cumpla con nuestros altos estándares.",
+    "about.why.ambiance.title": "Ambiente Elegante",
+    "about.why.ambiance.desc":
+      "Nuestro restaurante combina el encanto tradicional con el lujo moderno para una experiencia gastronómica inolvidable.",
+
+    // Atmosphere
+    "atmosphere.title": "Nuestro Ambiente",
+    "atmosphere.subtitle":
+      "Adéntrate en un mundo donde la naturaleza se encuentra con la cultura, creando el escenario perfecto para experiencias gastronómicas memorables",
+    "atmosphere.feature1.title": "Ambiente Natural",
+    "atmosphere.feature1.desc":
+      "Disfruta de una comida rodeado de hermosos elementos botánicos que crean una atmósfera serena y acogedora.",
+    "atmosphere.feature2.title": "Ambiente Familiar",
+    "atmosphere.feature2.desc":
+      "Un espacio cálido y acogedor perfecto para reuniones familiares, cenas románticas y celebraciones especiales.",
+    "atmosphere.feature3.title": "Diseño Elegante",
+    "atmosphere.feature3.desc":
+      "Interiores cuidadosamente diseñados que combinan la cultura tradicional pakistaní con la elegancia portuguesa moderna.",
+    "atmosphere.feature4.title": "Espacio Comunitario",
+    "atmosphere.feature4.desc":
+      "Más que un restaurante - un lugar de encuentro donde las culturas se encuentran y las amistades se forman alrededor de la cocina auténtica.",
+    "atmosphere.highlight.title": "Una Experiencia Gastronómica Única",
+    "atmosphere.highlight.desc":
+      "En Turmeric, creemos que cenar es más que solo comida. Se trata de crear conexiones, celebrar la cultura y disfrutar de los momentos preciosos de la vida en un espacio que se siente como en casa.",
+    "atmosphere.stats.years": "Años de Excelencia",
+    "atmosphere.stats.customers": "Clientes Satisfechos",
+    "atmosphere.stats.halal": "Certificación Halal",
+
+    // Menu
+    "menu.title": "Nuestro Menú",
+    "menu.subtitle":
+      "Descubre la cocina auténtica pakistaní e india elaborada con amor, ingredientes premium y recetas tradicionales transmitidas a través de generaciones",
+    "menu.halal": "100% Halal",
+    "menu.fresh": "Fresco Diariamente",
+    "menu.popular": "Popular",
+    "menu.cta.title": "¿Listo para Experimentar Sabores Auténticos?",
+    "menu.cta.desc":
+      "Reserva tu mesa ahora y déjanos llevarte en un viaje culinario a través de Pakistán e India, donde cada plato se prepara con ingredientes frescos y de alta calidad y recetas tradicionales.",
+    "menu.cta.button": "Reserva Tu Mesa",
+    "menu.categories.starters": "Entrantes",
+    "menu.categories.grills": "Parrilla",
+    "menu.categories.curryChicken": "Curry de Pollo",
+    "menu.categories.curryBeef": "Curry de Ternera",
+    "menu.categories.curryLamb": "Curry de Cordero",
+    "menu.categories.curryFish": "Curry de Pescado y Gambas",
+    "menu.categories.curryVeg": "Curry Vegetariano",
+    "menu.categories.bread": "Pan",
+    "menu.categories.rice": "Arroz",
+    "menu.categories.desserts": "Postres",
+    "menu.categories.drinks": "Bebidas",
+
+    // Gallery
+    "gallery.title": "Galería",
+    "gallery.subtitle":
+      "Haz un viaje visual a través de nuestro restaurante y descubre el ambiente que hace especial a Turmeric",
+    "gallery.cta.title": "¿Listo para Crear Tus Propios Recuerdos?",
+    "gallery.cta.description":
+      "Únete a nosotros para una experiencia gastronómica inolvidable donde cada plato cuenta una historia",
+    "gallery.cta.button": "Reserva Tu Mesa",
+    "gallery.categories.interior": "Interior",
+    "gallery.categories.experience": "Experiencia",
+    "gallery.categories.appetizers": "Entrantes",
+    "gallery.categories.mainDishes": "Platos Principales",
+    "gallery.categories.grills": "Parrilla",
+    "gallery.categories.beverages": "Bebidas",
+    "gallery.categories.desserts": "Postres",
+
+    // Reservations
+    "reservations.title": "Reservas",
+    "reservations.subtitle":
+      "Reserva tu mesa para una experiencia gastronómica inolvidable con cocina auténtica pakistaní e india",
+    "reservations.form.title": "Hacer una Reserva",
+    "reservations.form.subtitle":
+      "Reserva tu mesa y déjanos crear una experiencia memorable para ti",
+    "reservations.form.name": "Nombre Completo *",
+    "reservations.form.email": "Dirección de Email *",
+    "reservations.form.phone": "Número de Teléfono *",
+    "reservations.form.date": "Fecha *",
+    "reservations.form.time": "Hora *",
+    "reservations.form.guests": "Personas *",
+    "reservations.form.requests": "Peticiones Especiales (Opcional)",
+    "reservations.form.submit": "Reservar Mesa",
+    "reservations.form.confirmation":
+      "* Confirmaremos tu reserva en 24 horas por teléfono o email",
+    "reservations.form.success.title": "¡Reserva Enviada!",
+    "reservations.form.success.message":
+      "Gracias por elegir Turmeric. Nos pondremos en contacto contigo en 24 horas para confirmar tu reserva.",
+    "reservations.form.placeholder.name": "Introduce tu nombre completo",
+    "reservations.form.placeholder.phone": "+351 XXX XXX XXX",
+    "reservations.form.placeholder.email": "tu.email@ejemplo.com",
+    "reservations.form.placeholder.time": "Seleccionar hora",
+    "reservations.form.placeholder.guests": "Número",
+    "reservations.form.placeholder.requests":
+      "Cualquier requisito dietético especial, notas de celebración o preferencias de asiento...",
+    "reservations.form.guest.singular": "Persona",
+    "reservations.form.guest.plural": "Personas",
+    "reservations.hours.title": "Horario de Funcionamiento",
+    "reservations.hours.note":
+      "Nota: Recomendamos hacer reservas con anticipación, especialmente para cenas de fin de semana.",
+    "reservations.hours.days.thursday": "Jueves",
+    "reservations.hours.days.friday": "Viernes",
+    "reservations.hours.days.saturday": "Sábado",
+    "reservations.hours.days.sunday": "Domingo",
+    "reservations.hours.days.monday": "Lunes",
+    "reservations.hours.days.tuesday": "Martes",
+    "reservations.hours.days.wednesday": "Miércoles",
+    "reservations.hours.time": "15:00 - 23:00",
+    language: "es",
+
+    // Contact
+    "contact.title": "Contáctanos",
+    "contact.subtitle":
+      "Nos encantaría saber de ti. Ponte en contacto con nosotros para reservas, consultas o simplemente para saludar.",
+    "contact.visit": "Visítanos",
+    "contact.call": "Llámanos",
+    "contact.hours": "Horario de Funcionamiento",
+    "contact.daily": "Diariamente: 15:00 - 23:00",
+    "contact.follow": "Síguenos",
+    "contact.form.subject": "Asunto",
+    "contact.form.message": "Mensaje",
+    "contact.form.send": "Enviar Mensaje",
+
+    // Footer
+    "footer.hours": "Horario de Funcionamiento",
+    "footer.daily": "Diariamente: 15:00 - 23:00",
+    "footer.location": "Ubicación",
+    "footer.contact": "Contacto",
+    "footer.follow": "Síguenos",
+    "footer.rights": "Todos los derechos reservados.",
+    "footer.quicklinks": "Enlaces Rápidos",
+    "footer.contactinfo": "Información de Contacto",
+    "footer.description":
+      "Experimenta la cocina auténtica pakistaní e india en el corazón de Oporto. Nos enorgullece servir platos halal de alta calidad con servicio excepcional en un ambiente elegante.",
+    "footer.rating": "4.9/5 Valoración de Clientes",
+    "footer.dailyhours": "Horario Diario de Funcionamiento",
+    "footer.everyday": "15:00 - 23:00 (Todos los Días)",
+    "footer.recommendation": "Reservas recomendadas • Entrada libre bienvenida",
+    "footer.copyright":
+      "© 2025 Restaurante Turmeric. Hecho con ❤️ por Picky Pixels Studio",
+    "footer.privacy": "Política de Privacidad",
+    "footer.terms": "Términos de Servicio",
+
+    // Gallery Items
+    "gallery.items.elegantAmbiance.title": "Ambiente Elegante",
+    "gallery.items.elegantAmbiance.description":
+      "Nuestro restaurante bellamente diseñado con comodidades modernas y encanto tradicional",
+    "gallery.items.familyDining.title": "Experiencia de Comida Familiar",
+    "gallery.items.familyDining.description":
+      "Disfruta de una comida familiar con nuestros platos auténticos en un ambiente cálido y acogedor",
+    "gallery.items.chickenSamosa.title": "Samosa de Pollo",
+    "gallery.items.chickenSamosa.description":
+      "Samosas crujientes de pollo rellenos de especias aromáticas y hierbas frescas",
+    "gallery.items.chickenLollypop.title": "Pollo Lollypop",
+    "gallery.items.chickenLollypop.description":
+      "Pollo crujiente y jugoso servido como lollypop, un delicioso entrante",
+    "gallery.items.chickenKadhai.title": "Pollo Kadhai con Naan de Ajo",
+    "gallery.items.chickenKadhai.description":
+      "Pollo kadhai tradicional servido con pan naan de ajo fresco y aromático",
+    "gallery.items.tandooriFish.title": "Pescado Tandoori a la Parrilla",
+    "gallery.items.tandooriFish.description":
+      "Pescado fresco marinado con especias tandoori y asado a la perfección en nuestro horno tradicional",
+    "gallery.items.onionBhaji.title": "Bhaji de Cebolla",
+    "gallery.items.onionBhaji.description":
+      "Cebollas en rodajas rebozadas y fritas con especias indias, un entrante crujiente y sabroso",
+    "gallery.items.mangoLassi.title": "Lassi de Mango",
+    "gallery.items.mangoLassi.description":
+      "Bebida india tradicional hecha con mango fresco y yogur, refrescante y nutritiva",
+    "gallery.items.rasmalaiKheer.title": "Rasmalai y Kheer",
+    "gallery.items.rasmalaiKheer.description":
+      "Postres indios tradicionales: Rasmalai suave y Kheer cremoso para completar tu comida",
+
+    // Menu Items - Starters
+    "menu.items.soupOfTheDay.title": "Sopa del Día",
+    "menu.items.soupOfTheDay.description":
+      "Sopa fresca diaria preparada con ingredientes de temporada",
+    "menu.items.turmericChickenLollypop.title": "Pollo Lollypop de Cúrcuma",
+    "menu.items.turmericChickenLollypop.description":
+      "Alas de pollo crujientes fritas, marinadas en una mezcla de especias sabrosas y salteadas en una salsa picante secreta casera",
+    "menu.items.chickenSamosa.title": "Samosa de Pollo",
+    "menu.items.chickenSamosa.description":
+      "Masa crujiente rellena de pollo picado especiado y hierbas aromáticas",
+    "menu.items.vegetableSamosa.title": "Samosa de Verduras",
+    "menu.items.vegetableSamosa.description":
+      "Masa crujiente rellena de una mezcla especiada de patatas, guisantes verdes y hierbas aromáticas",
+    "menu.items.onionBhaji.title": "Bhaji de Cebolla",
+    "menu.items.onionBhaji.description":
+      "Frituras de cebolla crujientes y doradas, sazonadas con especias aromáticas",
+
+    // Menu Items - Grills
+    "menu.items.chickenTikka.title": "Pollo Tikka",
+    "menu.items.chickenTikka.description":
+      "Pollo sin hueso, marinado en yogur y especias y asado hasta que esté jugoso y tierno con un toque de ahumado",
+    "menu.items.tandooriFish.title": "Pescado Tandoori",
+    "menu.items.tandooriFish.description":
+      "Pescado Dorada marinado asado en un tandoor, con sabores ahumados y una mezcla de especias aromáticas",
+    "menu.items.murghSeekhKebab.title": "Murgh Seekh Kebab",
+    "menu.items.murghSeekhKebab.description":
+      "Kebabs de pollo picado asados, sazonados con especias aromáticas",
+    "menu.items.beefSeekhKebab.title": "Ternera Seekh Kebab",
+    "menu.items.beefSeekhKebab.description":
+      "Kebabs de ternera picada asados, sazonados con especias aromáticas",
+    "menu.items.chickenHariyaliTikka.title": "Pollo Hariyali Tikka",
+    "menu.items.chickenHariyaliTikka.description":
+      "Pollo sin hueso, marinado en yogur, menta y cilantro y asado hasta que esté jugoso y tierno",
+    "menu.items.tandooriChicken.title": "Pollo Tandoori",
+    "menu.items.tandooriChicken.description":
+      "Pollo marinado en una mezcla de yogur y especias, luego asado en un tandoor para un acabado ahumado y sabroso",
+
+    // Menu Items - Chicken Curry
+    "menu.items.butterChicken.title": "Pollo con Mantequilla",
+    "menu.items.butterChicken.description":
+      "Pollo tierno en salsa rica de mantequilla y tomate",
+    "menu.items.chickenTikkaMasala.title": "Pollo Tikka Masala",
+    "menu.items.chickenTikkaMasala.description":
+      "Pollo asado en salsa cremosa de tomate especiada",
+    "menu.items.chickenKadhai.title": "Pollo Kadhai",
+    "menu.items.chickenKadhai.description":
+      "Pollo con pimientos en salsa de tomate picante",
+    "menu.items.chickenCurry.title": "Curry de Pollo",
+    "menu.items.chickenCurry.description":
+      "Curry de pollo tradicional con especias aromáticas",
+    "menu.items.chickenKorma.title": "Pollo Korma",
+    "menu.items.chickenKorma.description":
+      "Curry de pollo suave en salsa cremosa de coco",
+    "menu.items.chickenVindaloo.title": "Pollo Vindaloo",
+    "menu.items.chickenVindaloo.description":
+      "Curry de pollo picante con vinagre y especias",
+    "menu.items.mangoChicken.title": "Pollo con Mango",
+    "menu.items.mangoChicken.description":
+      "Curry de pollo con sabor dulce de mango",
+    "menu.items.chickenMadras.title": "Pollo Madras",
+    "menu.items.chickenMadras.description":
+      "Curry de pollo picante estilo sur de la India",
+    "menu.items.chickenPalak.title": "Pollo Palak",
+    "menu.items.chickenPalak.description":
+      "Pollo en salsa cremosa de espinacas",
+
+    // Menu Items - Beef Curry
+    "menu.items.beefCurry.title": "Curry de Ternera",
+    "menu.items.beefCurry.description":
+      "Ternera cocinada lentamente en salsa de curry tradicional",
+    "menu.items.beefMadras.title": "Ternera Madras",
+    "menu.items.beefMadras.description":
+      "Curry de ternera picante con coco y hojas de curry",
+    "menu.items.beefVindaloo.title": "Ternera Vindaloo",
+    "menu.items.beefVindaloo.description":
+      "Curry de ternera ardiente con vinagre y especias",
+
+    // Menu Items - Lamb Curry
+    "menu.items.lambKadhai.title": "Cordero Kadhai",
+    "menu.items.lambKadhai.description":
+      "Cordero cocinado con pimientos, cebollas y una mezcla de especias en una salsa rica y sabrosa",
+    "menu.items.lambCurry.title": "Curry de Cordero",
+    "menu.items.lambCurry.description":
+      "Curry de cordero estilo casero, cocinado con cebolla, tomate y salsa de curry tradicional",
+    "menu.items.lambKorma.title": "Cordero Korma",
+    "menu.items.lambKorma.description":
+      "Cordero cocinado en una salsa cremosa ligeramente especiada con un toque de dulzura",
+
+    // Menu Items - Fish & Shrimp Curry
+    "menu.items.doradaFishCurry.title": "Curry de Pescado Dorada",
+    "menu.items.doradaFishCurry.description":
+      "Pescado dorada cocinado con cebolla, tomate y salsa de curry tradicional",
+    "menu.items.prawnMasala.title": "Gambas Masala",
+    "menu.items.prawnMasala.description":
+      "Gambas cocinadas en una salsa de tomate sedosa, infundida con especias aromáticas y un toque de crema",
+    "menu.items.prawnMalaiCurry.title": "Curry de Gambas Malai",
+    "menu.items.prawnMalaiCurry.description":
+      "Gambas tiernas cocinadas en una salsa cremosa de coco ligeramente especiada con un toque de dulzura",
+
+    // Menu Items - Vegetarian Curry
+    "menu.items.kadhaiPaneer.title": "Kadhai Paneer",
+    "menu.items.kadhaiPaneer.description":
+      "Queso cottage con pimientos en salsa de tomate picante",
+    "menu.items.paneerButterMasala.title": "Paneer Butter Masala",
+    "menu.items.paneerButterMasala.description":
+      "Queso cottage en salsa rica de mantequilla y tomate",
+    "menu.items.palakPaneer.title": "Palak Paneer",
+    "menu.items.palakPaneer.description":
+      "Queso cottage en salsa cremosa de espinacas",
+    "menu.items.matarPaneer.title": "Matar Paneer",
+    "menu.items.matarPaneer.description":
+      "Queso cottage con guisantes verdes en salsa de curry",
+    "menu.items.bindhiMasala.title": "Bindhi Masala",
+    "menu.items.bindhiMasala.description":
+      "Okra cocinada con cebollas y especias",
+    "menu.items.alooGobi.title": "Aloo Gobi",
+    "menu.items.alooGobi.description":
+      "Curry de patatas y coliflor con especias",
+    "menu.items.alooPalak.title": "Aloo Palak",
+    "menu.items.alooPalak.description": "Patatas en salsa cremosa de espinacas",
+    "menu.items.vegKorma.title": "Korma Vegetariano",
+    "menu.items.vegKorma.description":
+      "Verduras mixtas en salsa cremosa de coco",
+    "menu.items.daalMakhni.title": "Daal Makhni",
+    "menu.items.daalMakhni.description":
+      "Lentejas negras en salsa rica de mantequilla y crema",
+    "menu.items.daalTadka.title": "Daal Tadka",
+    "menu.items.daalTadka.description":
+      "Lentejas amarillas templadas con especias",
+    "menu.items.chanaMasala.title": "Chana Masala",
+    "menu.items.chanaMasala.description":
+      "Garbanzos en salsa picante de tomate y cebolla",
+
+    // Menu Items - Bread
+    "menu.items.plainNaan.title": "Naan Natural",
+    "menu.items.plainNaan.description": "Pan plano indio tradicional",
+    "menu.items.butterNaan.title": "Naan con Mantequilla",
+    "menu.items.butterNaan.description": "Naan untado con mantequilla",
+    "menu.items.garlicNaan.title": "Naan de Ajo",
+    "menu.items.garlicNaan.description": "Naan con ajo y hierbas",
+    "menu.items.cheeseNaan.title": "Naan de Queso",
+    "menu.items.cheeseNaan.description": "Naan relleno de queso",
+    "menu.items.garlicCheeseNaan.title": "Naan de Ajo y Queso",
+    "menu.items.garlicCheeseNaan.description": "Naan con ajo y queso",
+    "menu.items.paneerKulcha.title": "Paneer Kulcha",
+    "menu.items.paneerKulcha.description":
+      "Pan relleno de queso cottage especiado",
+    "menu.items.alooKulcha.title": "Aloo Kulcha",
+    "menu.items.alooKulcha.description": "Pan relleno de patatas especiadas",
+    "menu.items.peshwariNaan.title": "Naan Peshwari",
+    "menu.items.peshwariNaan.description":
+      "Naan dulce con coco, pasas y frutos secos",
+    "menu.items.tandooriRoti.title": "Roti Tandoori",
+    "menu.items.tandooriRoti.description":
+      "Pan plano de trigo integral del tandoor",
+
+    // Menu Items - Rice
+    "menu.items.steamRice.title": "Arroz al Vapor",
+    "menu.items.steamRice.description": "Arroz basmati cocido al vapor natural",
+    "menu.items.chickenBiryani.title": "Biryani de Pollo",
+    "menu.items.chickenBiryani.description":
+      "Arroz basmati fragante con pollo especiado",
+    "menu.items.beefBiryani.title": "Biryani de Ternera",
+    "menu.items.beefBiryani.description":
+      "Arroz aromático con trozos tiernos de ternera",
+    "menu.items.lambBiryani.title": "Biryani de Cordero",
+    "menu.items.lambBiryani.description":
+      "Arroz aromático con trozos tiernos de cordero",
+    "menu.items.prawnBiryani.title": "Biryani de Gambas",
+    "menu.items.prawnBiryani.description": "Arroz fragante con gambas jugosas",
+    "menu.items.vegetableBiryani.title": "Biryani Vegetariano",
+    "menu.items.vegetableBiryani.description":
+      "Verduras mixtas con arroz basmati fragante",
+    "menu.items.biryaniRice.title": "Arroz Biryani",
+    "menu.items.biryaniRice.description": "Arroz basmati especiado sin carne",
+    "menu.items.zeeraRice.title": "Arroz Zeera",
+    "menu.items.zeeraRice.description": "Arroz basmati con semillas de comino",
+
+    // Menu Items - Desserts
+    "menu.items.rasmalai.title": "Rasmalai",
+    "menu.items.rasmalai.description":
+      "Albóndigas de queso cottage en leche dulce con cardamomo",
+    "menu.items.kheer.title": "Kheer",
+    "menu.items.kheer.description":
+      "Pudín de arroz con frutos secos y especias aromáticas",
+
+    // Menu Items - Drinks
+    "menu.items.mangoLassi.title": "Lassi de Mango",
+    "menu.items.mangoLassi.description": "Bebida refrescante de yogur y mango",
+    "menu.items.sweetLassi.title": "Lassi Dulce",
+    "menu.items.sweetLassi.description": "Bebida tradicional de yogur dulce",
+    "menu.items.namkeenLassi.title": "Lassi Salado",
+    "menu.items.namkeenLassi.description": "Bebida de yogur salado sabrosa",
+    "menu.items.freshOrangeJuice.title": "Zumo de Naranja Fresco",
+    "menu.items.freshOrangeJuice.description":
+      "Zumo de naranja recién exprimido",
+    "menu.items.freshLemonMint.title": "Limón y Menta Frescos",
+    "menu.items.freshLemonMint.description":
+      "Bebida refrescante de limón y menta",
+    "menu.items.chaai.title": "Chaai",
+    "menu.items.chaai.description":
+      "Té especiado con leche y hierbas aromáticas",
+    "menu.items.cocaCola.title": "Coca Cola",
+    "menu.items.cocaCola.description": "Cola refrescante clásica",
+    "menu.items.cocaColaZero.title": "Coca Cola Zero",
+    "menu.items.cocaColaZero.description": "Cola sin calorías",
+    "menu.items.fanta.title": "Fanta",
+    "menu.items.fanta.description": "Refresco con sabor a naranja",
+    "menu.items.sevenUp.title": "7 UP",
+    "menu.items.sevenUp.description": "Refresco con sabor a limón-lima",
+    "menu.items.guarana.title": "Guaraná",
+    "menu.items.guarana.description": "Refresco brasileño de guaraná",
+    "menu.items.liptonIceTeaMango.title": "Té Helado Lipton Mango",
+    "menu.items.liptonIceTeaMango.description": "Té helado con sabor a mango",
+    "menu.items.liptonIceTeaPeach.title": "Té Helado Lipton Melocotón",
+    "menu.items.liptonIceTeaPeach.description":
+      "Té helado con sabor a melocotón",
+    "menu.items.liptonIceTeaLemon.title": "Té Helado Lipton Limón",
+    "menu.items.liptonIceTeaLemon.description": "Té helado con sabor a limón",
+    "menu.items.pedrasLimao.title": "Pedras Limão 250ml",
+    "menu.items.pedrasLimao.description":
+      "Agua con gas portuguesa con sabor a limón",
+    "menu.items.pedrasSalgadas250.title": "Pedras Salgadas 250ml",
+    "menu.items.pedrasSalgadas250.description":
+      "Agua mineral con gas portuguesa",
+    "menu.items.pedrasSalgadas500.title": "Pedras Salgadas 500ml",
+    "menu.items.pedrasSalgadas500.description":
+      "Agua mineral con gas portuguesa",
+    "menu.items.water500.title": "Agua 500ml",
+    "menu.items.water500.description": "Agua sin gas",
+    "menu.items.water1500.title": "Agua 1.5L",
+    "menu.items.water1500.description": "Agua sin gas botella grande",
+
+    // Additional UI Elements
+    "ui.restaurantInformation": "Información del Restaurante",
+    "ui.reviewsAndRatings": "Reseñas y Valoraciones",
+    "ui.travelerReviews": "Reseñas de viajeros",
+    "ui.customerExperiences": "Experiencias de clientes",
+    "ui.openNow": "Abierto Ahora",
+    "ui.closedNow": "Cerrado Ahora",
+    "ui.getDirections": "Obtener Direcciones",
+    "ui.viewLargerMap": "Ver mapa más grande",
+    "ui.keyboardShortcuts": "Atajos de teclado",
+    "ui.mapData": "Datos del mapa",
+    "ui.terms": "Términos",
+    "ui.reportMapError": "Reportar un error del mapa",
+    "ui.madeWith": "Hecho con",
+    "ui.by": "por",
   },
 };
 
