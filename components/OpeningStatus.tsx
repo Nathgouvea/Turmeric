@@ -1,58 +1,61 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Clock } from 'lucide-react'
-import { useLanguage } from '../contexts/LanguageContext'
+import { useState, useEffect } from "react";
+import { Clock } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const OpeningStatus = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [currentTime, setCurrentTime] = useState('')
-  const { t } = useLanguage()
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const updateStatus = () => {
       // Get Portugal time (WET/WEST timezone)
-      const portugalTime = new Intl.DateTimeFormat('pt-PT', {
-        timeZone: 'Europe/Lisbon',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      }).format(new Date())
+      const portugalTime = new Intl.DateTimeFormat("pt-PT", {
+        timeZone: "Europe/Lisbon",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(new Date());
 
-      setCurrentTime(portugalTime)
+      setCurrentTime(portugalTime);
 
       // Parse the hour from the time string
-      const hour = parseInt(portugalTime.split(':')[0])
-      
+      const hour = parseInt(portugalTime.split(":")[0]);
+
       // Restaurant is open from 15:00 to 23:00
-      const isCurrentlyOpen = hour >= 15 && hour < 23
-      setIsOpen(isCurrentlyOpen)
-    }
+      const isCurrentlyOpen = hour >= 15 && hour < 23;
+      setIsOpen(isCurrentlyOpen);
+    };
 
     // Update immediately
-    updateStatus()
+    updateStatus();
 
     // Update every minute
-    const interval = setInterval(updateStatus, 60000)
+    const interval = setInterval(updateStatus, 60000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex items-center space-x-2">
       <Clock className="w-4 h-4 text-gray-600" />
-      <span className="text-sm text-gray-600">
-        {currentTime} (Portugal) -
+      <span className="text-sm text-gray-600">{currentTime} (Portugal) -</span>
+      <span
+        className={`text-sm font-medium ${
+          isOpen ? "text-green-600" : "text-red-600"
+        }`}
+      >
+        {isOpen ? t("ui.openNow") : t("ui.closedNow")}
       </span>
-      <span className={`text-sm font-medium ${isOpen ? 'text-green-600' : 'text-red-600'}`}>
-        {isOpen 
-          ? (t('language') === 'pt' ? 'Aberto Agora' : 'Open Now')
-          : (t('language') === 'pt' ? 'Fechado Agora' : 'Closed Now')
-        }
-      </span>
-      <div className={`w-2 h-2 rounded-full ${isOpen ? 'bg-green-500' : 'bg-red-500'} animate-pulse`} />
+      <div
+        className={`w-2 h-2 rounded-full ${
+          isOpen ? "bg-green-500" : "bg-red-500"
+        } animate-pulse`}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default OpeningStatus
+export default OpeningStatus;

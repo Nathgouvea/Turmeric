@@ -47,7 +47,7 @@ const Reviews = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
-                    Google Reviews
+                    {t("reviews.googleTitle")}
                   </h3>
                   <div className="flex items-center">
                     <span className="text-lg font-bold text-gray-800 mr-1">
@@ -79,11 +79,9 @@ const Reviews = () => {
                       "_blank"
                     )
                   }
-                  aria-label={`${
-                    t("language") === "pt" ? "Ver" : "View"
-                  } Google reviews`}
+                  aria-label={`${t("reviews.view")} Google reviews`}
                 >
-                  {t("language") === "pt" ? "Ver" : "View"}
+                  {t("reviews.view")}
                   <ExternalLink className="w-2 h-2 ml-1" />
                 </Button>
               </div>
@@ -102,7 +100,7 @@ const Reviews = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
-                    TripAdvisor
+                    {t("reviews.tripadvisorTitle")}
                   </h3>
                   <div className="flex items-center">
                     <span className="text-lg font-bold text-gray-800 mr-1">
@@ -132,11 +130,9 @@ const Reviews = () => {
                       "_blank"
                     )
                   }
-                  aria-label={`${
-                    t("language") === "pt" ? "Ver" : "View"
-                  } TripAdvisor reviews`}
+                  aria-label={`${t("reviews.view")} TripAdvisor reviews`}
                 >
-                  {t("language") === "pt" ? "Ver" : "View"}
+                  {t("reviews.view")}
                   <ExternalLink className="w-2 h-2 ml-1" />
                 </Button>
               </div>
@@ -155,17 +151,15 @@ const Reviews = () => {
           <div className="flex items-center justify-center space-x-4 text-xs text-gray-600">
             <div className="flex items-center">
               <Star className="w-3 h-3 text-yellow-400 mr-1" />
-              <span>{t("language") === "pt" ? "Excelente" : "Excellent"}</span>
+              <span>{t("reviews.excellent")}</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1"></div>
-              <span>{t("language") === "pt" ? "Verificado" : "Verified"}</span>
+              <span>{t("reviews.verified")}</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-primary-gold rounded-full mr-1"></div>
-              <span>
-                {t("language") === "pt" ? "Recomendado" : "Recommended"}
-              </span>
+              <span>{t("reviews.recommended")}</span>
             </div>
           </div>
         </motion.div>

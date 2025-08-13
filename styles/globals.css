@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,6 +61,48 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] body {
+    font-family: "Noto Sans Arabic", "Inter", sans-serif;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  [dir="rtl"] .ml-auto {
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  [dir="rtl"] .mr-auto {
+    margin-right: unset;
+    margin-left: auto;
+  }
+
+  [dir="rtl"] .space-x-2 > * + * {
+    margin-left: unset;
+    margin-right: 0.5rem;
+  }
+
+  [dir="rtl"] .space-x-3 > * + * {
+    margin-left: unset;
+    margin-right: 0.75rem;
+  }
+
+  [dir="rtl"] .space-x-4 > * + * {
+    margin-left: unset;
+    margin-right: 1rem;
   }
 
   h1 {

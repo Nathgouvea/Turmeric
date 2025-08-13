@@ -1,15 +1,18 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Clock, Star, ExternalLink } from 'lucide-react'
-import { Card, CardContent } from './ui/card'
-import OpeningStatus from './OpeningStatus'
-import { useLanguage } from '../contexts/LanguageContext'
+import { motion } from "framer-motion";
+import { MapPin, Phone, Clock, Star, ExternalLink } from "lucide-react";
+import { Card, CardContent } from "./ui/card";
+import OpeningStatus from "./OpeningStatus";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Contact = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -20,10 +23,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="font-great-vibes text-5xl md:text-6xl text-primary-gold mb-4">
-            {t('contact.title')}
+            {t("contact.title")}
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            {t('contact.subtitle')}
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -40,9 +43,9 @@ const Contact = () => {
             <Card className="shadow-lg border-0">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                  {t('language') === 'pt' ? 'Informações do Restaurante' : 'Restaurant Information'}
+                  {t("ui.restaurantInformation")}
                 </h3>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Address */}
                   <div className="flex items-start space-x-4">
@@ -50,17 +53,25 @@ const Contact = () => {
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">{t('contact.visit')}</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        {t("contact.visit")}
+                      </h4>
                       <p className="text-gray-600 leading-relaxed">
-                        R. Formosa 429<br />
+                        R. Formosa 429
+                        <br />
                         4000-253 Porto, Portugal
                       </p>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         className="mt-2 text-primary-gold hover:text-yellow-600 font-medium text-sm"
-                        onClick={() => window.open('https://maps.google.com/?q=R.+Formosa+429,+4000-253+Porto,+Portugal', '_blank')}
+                        onClick={() =>
+                          window.open(
+                            "https://maps.google.com/?q=R.+Formosa+429,+4000-253+Porto,+Portugal",
+                            "_blank"
+                          )
+                        }
                       >
-{t('language') === 'pt' ? 'Obter Direções →' : 'Get Directions →'}
+                        {t("ui.getDirections")} →
                       </motion.button>
                     </div>
                   </div>
@@ -72,7 +83,9 @@ const Contact = () => {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">{t('contact.call')}</h4>
+                        <h4 className="font-semibold text-gray-800 mb-2">
+                          {t("contact.call")}
+                        </h4>
                         <p className="text-gray-600">+351 22 208 6926</p>
                       </div>
                     </div>
@@ -82,8 +95,12 @@ const Contact = () => {
                         <Clock className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">{t('contact.hours')}</h4>
-                        <p className="text-gray-600 mb-2">{t('contact.daily')}</p>
+                        <h4 className="font-semibold text-gray-800 mb-2">
+                          {t("contact.hours")}
+                        </h4>
+                        <p className="text-gray-600 mb-2">
+                          {t("contact.daily")}
+                        </p>
                         <OpeningStatus />
                       </div>
                     </div>
@@ -95,7 +112,9 @@ const Contact = () => {
             {/* Reviews Links */}
             <Card className="shadow-lg border-0">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Reviews & Ratings</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  {t("ui.reviewsAndRatings")}
+                </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <motion.a
                     href="https://www.google.com/search?q=turmeric+restaurant+porto+reviews"
@@ -108,8 +127,12 @@ const Contact = () => {
                       <Star className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-gray-800">Google Reviews</p>
-                      <p className="text-sm text-gray-600">Customer experiences</p>
+                      <p className="font-semibold text-gray-800">
+                        {t("reviews.googleTitle")}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {t("ui.customerExperiences")}
+                      </p>
                     </div>
                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
                   </motion.a>
@@ -125,8 +148,12 @@ const Contact = () => {
                       <Star className="w-5 h-5 text-white" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-gray-800">TripAdvisor</p>
-                      <p className="text-sm text-gray-600">Traveler reviews</p>
+                      <p className="font-semibold text-gray-800">
+                        {t("reviews.tripadvisorTitle")}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {t("ui.travelerReviews")}
+                      </p>
                     </div>
                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-green-600" />
                   </motion.a>
@@ -160,7 +187,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

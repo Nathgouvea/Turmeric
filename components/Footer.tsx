@@ -148,7 +148,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 text-sm text-gray-400"
             >
-              <span>© 2025 Turmeric Restaurant. Made with</span>
+              <span>© 2025 Turmeric Restaurant. {t("ui.madeWith")}</span>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{
@@ -160,7 +160,7 @@ const Footer = () => {
               >
                 <Heart className="w-4 h-4 text-red-500" />
               </motion.div>
-              <span>by</span>
+              <span>{t("ui.by")}</span>
               <a
                 href="https://pickypixels.studio"
                 target="_blank"
