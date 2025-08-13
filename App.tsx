@@ -1,29 +1,25 @@
-import { LanguageProvider } from './contexts/LanguageContext'
-import { RouterProvider, useRouter } from './contexts/RouterContext'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import HomePage from './pages/HomePage'
-import ReservationsPage from './pages/ReservationsPage'
+import { LanguageProvider } from "./contexts/LanguageContext";
+import { RouterProvider, useRouter } from "./contexts/RouterContext";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
 
 const AppContent = () => {
-  const { currentPage } = useRouter()
+  const { currentPage } = useRouter();
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation />
-      
+
       {/* Main Content */}
-      <main>
-        {currentPage === 'home' && <HomePage />}
-        {currentPage === 'reservations' && <ReservationsPage />}
-      </main>
-      
+      <main>{currentPage === "home" && <HomePage />}</main>
+
       {/* Footer */}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default function App() {
   return (
@@ -32,5 +28,5 @@ export default function App() {
         <AppContent />
       </RouterProvider>
     </LanguageProvider>
-  )
+  );
 }

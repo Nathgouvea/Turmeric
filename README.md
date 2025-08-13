@@ -16,24 +16,27 @@ A modern, responsive website for Turmeric Restaurant in Porto, Portugal. Built w
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Git
 
 ### Local Development
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Nathgouvea/Turmeric.git
 cd Turmeric
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -47,25 +50,31 @@ npm run dev
 The repository includes a GitHub Actions workflow that automatically deploys the site when you push to the main branch.
 
 1. **Enable GitHub Pages**:
+
    - Go to your repository settings
    - Navigate to "Pages" section
    - Under "Source", select "GitHub Actions"
 
 2. **Update the base URL**:
+
    - Open `vite.config.ts`
    - Update the `base` property to match your repository name:
+
    ```typescript
-   base: '/your-repository-name/'
+   base: "/your-repository-name/";
    ```
 
 3. **Update the homepage URL**:
+
    - Open `package.json`
    - Update the `homepage` field:
+
    ```json
    "homepage": "https://yourusername.github.io/your-repository-name"
    ```
 
 4. **Push to main branch**:
+
 ```bash
 git add .
 git commit -m "Deploy to GitHub Pages"
@@ -111,12 +120,14 @@ npm run deploy
 ### Colors
 
 The primary brand color is defined in the CSS variables:
+
 - Primary Gold: `#e0aa22`
 - Update in `styles/globals.css` if needed
 
 ### Fonts
 
 Using Google Fonts:
+
 - **Great Vibes** - For elegant headings
 - **Inter** - For body text
 
@@ -130,7 +141,7 @@ The reservation form uses [Formspree](https://formspree.io/) for handling submis
 
 1. Create a Formspree account
 2. Get your form endpoint
-3. Update the endpoint in `pages/ReservationsPage.tsx`
+3. Update the endpoint in `components/Reservations.tsx`
 
 ## 🔧 Configuration
 
@@ -141,6 +152,7 @@ No environment variables are needed for the static build. All configuration is d
 ### SEO
 
 Update meta tags in `index.html` for your specific deployment:
+
 - Title tags
 - Meta descriptions
 - Open Graph tags

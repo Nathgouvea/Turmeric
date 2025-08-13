@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, Users, Phone, Mail, CheckCircle } from "lucide-react";
+import { Calendar, Clock, Users, Mail, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { useLanguage } from "../contexts/LanguageContext";
+import OpeningStatus from "./OpeningStatus";
 
 const Reservations = () => {
   const { t } = useLanguage();
@@ -227,7 +228,7 @@ const Reservations = () => {
                             handleInputChange("time", value)
                           }
                         >
-                          <SelectTrigger 
+                          <SelectTrigger
                             className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                             aria-label={t("reservations.form.time")}
                           >
@@ -256,7 +257,7 @@ const Reservations = () => {
                             handleInputChange("guests", value)
                           }
                         >
-                          <SelectTrigger 
+                          <SelectTrigger
                             className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                             aria-label={t("reservations.form.guests")}
                           >
@@ -304,7 +305,9 @@ const Reservations = () => {
                       type="submit"
                       className="w-full bg-primary-gold hover:bg-yellow-600 text-white py-3 text-lg font-medium"
                       size="lg"
-                      aria-label={`${t("reservations.form.submit")} reservation form`}
+                      aria-label={`${t(
+                        "reservations.form.submit"
+                      )} reservation form`}
                     >
                       {t("reservations.form.submit")}
                     </Button>
@@ -339,7 +342,7 @@ const Reservations = () => {
             </Card>
           </motion.div>
 
-          {/* Operating Hours */}
+          {/* Right Column - Restaurant Info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -347,6 +350,7 @@ const Reservations = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
+            {/* Operating Hours */}
             <Card className="shadow-xl border-0">
               <CardHeader className="bg-gray-900 text-white rounded-t-lg">
                 <CardTitle className="flex items-center space-x-2 pt-[0px] pr-[0px] pb-[10px] pl-[0px]">
@@ -382,6 +386,9 @@ const Reservations = () => {
                   <p className="text-sm text-gray-700">
                     <strong>Note:</strong> {t("reservations.hours.note")}
                   </p>
+                </div>
+                <div className="mt-4">
+                  <OpeningStatus />
                 </div>
               </CardContent>
             </Card>
