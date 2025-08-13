@@ -5,11 +5,6 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   base: '/', // Custom domain - no repository path needed
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './'),
-    },
-  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -20,6 +15,11 @@ export default defineConfig({
           ui: ['framer-motion', 'lucide-react'],
         },
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './'),
     },
   },
   optimizeDeps: {
