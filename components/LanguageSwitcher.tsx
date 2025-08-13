@@ -1,27 +1,28 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Globe, ChevronDown } from 'lucide-react'
-import { Button } from './ui/button'
-import { useLanguage } from '../contexts/LanguageContext'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { Globe, ChevronDown } from "lucide-react";
+import { Button } from "./ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useState } from "react";
 
 const LanguageSwitcher = () => {
-  const { language, setLanguage } = useLanguage()
-  const [isOpen, setIsOpen] = useState(false)
+  const { language, setLanguage } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'pt', name: 'Português', flag: '🇵🇹' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' }
-  ]
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "pt", name: "Português", flag: "🇵🇹" },
+    { code: "ar", name: "العربية", flag: "🇸🇦" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+  ];
 
-  const currentLanguage = languages.find(lang => lang.code === language)
+  const currentLanguage = languages.find((lang) => lang.code === language);
 
-  const handleLanguageChange = (langCode: 'en' | 'pt' | 'ar') => {
-    setLanguage(langCode)
-    setIsOpen(false)
-  }
+  const handleLanguageChange = (langCode: "en" | "pt" | "ar" | "fr") => {
+    setLanguage(langCode);
+    setIsOpen(false);
+  };
 
   return (
     <motion.div
@@ -43,7 +44,11 @@ const LanguageSwitcher = () => {
             {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
           </span>
         </div>
-        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-4 h-4 transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </Button>
 
       {isOpen && (
@@ -57,10 +62,14 @@ const LanguageSwitcher = () => {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => handleLanguageChange(lang.code as 'en' | 'pt' | 'ar')}
+              onClick={() =>
+                handleLanguageChange(lang.code as "en" | "pt" | "ar" | "fr")
+              }
               className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 flex items-center space-x-3 ${
-                language === lang.code ? 'bg-primary-gold/10 text-primary-gold' : 'text-gray-700'
-              } ${lang.code === 'ar' ? 'text-right' : 'text-left'}`}
+                language === lang.code
+                  ? "bg-primary-gold/10 text-primary-gold"
+                  : "text-gray-700"
+              } ${lang.code === "ar" ? "text-right" : "text-left"}`}
             >
               <span className="text-lg">{lang.flag}</span>
               <span className="font-medium">{lang.name}</span>
@@ -71,13 +80,10 @@ const LanguageSwitcher = () => {
 
       {/* Click outside to close */}
       {isOpen && (
-        <div
-          className="fixed inset-0 z-40"
-          onClick={() => setIsOpen(false)}
-        />
+        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
       )}
     </motion.div>
-  )
-}
+  );
+};
 
-export default LanguageSwitcher
+export default LanguageSwitcher;
