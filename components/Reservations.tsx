@@ -1,64 +1,113 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Calendar, Clock, Users, Phone, Mail, CheckCircle } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Label } from './ui/label'
-import { Textarea } from './ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Calendar, Clock, Users, Phone, Mail, CheckCircle } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Reservations = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const { t } = useLanguage();
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    time: '',
-    guests: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    guests: "",
+    message: "",
+  });
 
   const operatingHours = [
-    { day: 'Thursday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Friday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Saturday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Sunday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Monday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Tuesday', hours: '15:00 - 23:00', isOpen: true },
-    { day: 'Wednesday', hours: '15:00 - 23:00', isOpen: true }
-  ]
+    {
+      day: t("reservations.hours.days.thursday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.friday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.saturday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.sunday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.monday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.tuesday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.wednesday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+  ];
 
   const timeSlots = [
-    '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
-    '18:00', '18:30', '19:00', '19:30', '20:00', '20:30',
-    '21:00', '21:30', '22:00', '22:30'
-  ]
+    "15:00",
+    "15:30",
+    "16:00",
+    "16:30",
+    "17:00",
+    "17:30",
+    "18:00",
+    "18:30",
+    "19:00",
+    "19:30",
+    "20:00",
+    "20:30",
+    "21:00",
+    "21:30",
+    "22:00",
+    "22:30",
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Simulate form submission
-    setIsSubmitted(true)
+    setIsSubmitted(true);
     setTimeout(() => {
-      setIsSubmitted(false)
+      setIsSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        time: '',
-        guests: '',
-        message: ''
-      })
-    }, 3000)
-  }
+        name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        guests: "",
+        message: "",
+      });
+    }, 3000);
+  };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   return (
     <section id="reservations" className="py-20 bg-white">
@@ -72,10 +121,10 @@ const Reservations = () => {
           className="text-center mb-16"
         >
           <h2 className="font-great-vibes text-5xl md:text-6xl text-primary-gold mb-4">
-            Reservations
+            {t("reservations.title")}
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Book your table for an unforgettable dining experience with authentic Pakistani and Indian cuisine
+            {t("reservations.subtitle")}
           </p>
         </motion.div>
 
@@ -90,10 +139,10 @@ const Reservations = () => {
             <Card className="shadow-xl border-0">
               <CardHeader className="bg-primary-gold text-white rounded-t-lg">
                 <CardTitle className="text-2xl font-semibold">
-                  Make a Reservation
+                  {t("reservations.form.title")}
                 </CardTitle>
                 <p className="opacity-90 p-[0px] pt-[0px] pr-[0px] pb-[10px] pl-[0px]">
-                  Reserve your table and let us create a memorable experience for you
+                  {t("reservations.form.subtitle")}
                 </p>
               </CardHeader>
               <CardContent className="p-8">
@@ -101,25 +150,33 @@ const Reservations = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
+                        <Label htmlFor="name">
+                          {t("reservations.form.name")}
+                        </Label>
                         <Input
                           id="name"
                           type="text"
                           value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
-                          placeholder="Enter your full name"
+                          onChange={(e) =>
+                            handleInputChange("name", e.target.value)
+                          }
+                          placeholder={t("reservations.form.placeholder.name")}
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number *</Label>
+                        <Label htmlFor="phone">
+                          {t("reservations.form.phone")}
+                        </Label>
                         <Input
                           id="phone"
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => handleInputChange('phone', e.target.value)}
-                          placeholder="+351 XXX XXX XXX"
+                          onChange={(e) =>
+                            handleInputChange("phone", e.target.value)
+                          }
+                          placeholder={t("reservations.form.placeholder.phone")}
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                         />
@@ -127,13 +184,17 @@ const Reservations = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">
+                        {t("reservations.form.email")}
+                      </Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
-                        onChange={(e) => handleInputChange('email', e.target.value)}
-                        placeholder="your.email@example.com"
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        placeholder={t("reservations.form.placeholder.email")}
                         required
                         className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                       />
@@ -141,22 +202,37 @@ const Reservations = () => {
 
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="date">Date *</Label>
+                        <Label htmlFor="date">
+                          {t("reservations.form.date")}
+                        </Label>
                         <Input
                           id="date"
                           type="date"
                           value={formData.date}
-                          onChange={(e) => handleInputChange('date', e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("date", e.target.value)
+                          }
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
-                          min={new Date().toISOString().split('T')[0]}
+                          min={new Date().toISOString().split("T")[0]}
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="time">Time *</Label>
-                        <Select value={formData.time} onValueChange={(value) => handleInputChange('time', value)}>
+                        <Label htmlFor="time">
+                          {t("reservations.form.time")}
+                        </Label>
+                        <Select
+                          value={formData.time}
+                          onValueChange={(value) =>
+                            handleInputChange("time", value)
+                          }
+                        >
                           <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
-                            <SelectValue placeholder="Select time" />
+                            <SelectValue
+                              placeholder={t(
+                                "reservations.form.placeholder.time"
+                              )}
+                            />
                           </SelectTrigger>
                           <SelectContent>
                             {timeSlots.map((slot) => (
@@ -168,29 +244,51 @@ const Reservations = () => {
                         </Select>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="guests">Guests *</Label>
-                        <Select value={formData.guests} onValueChange={(value) => handleInputChange('guests', value)}>
+                        <Label htmlFor="guests">
+                          {t("reservations.form.guests")}
+                        </Label>
+                        <Select
+                          value={formData.guests}
+                          onValueChange={(value) =>
+                            handleInputChange("guests", value)
+                          }
+                        >
                           <SelectTrigger className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold">
-                            <SelectValue placeholder="Number" />
+                            <SelectValue
+                              placeholder={t(
+                                "reservations.form.placeholder.guests"
+                              )}
+                            />
                           </SelectTrigger>
                           <SelectContent>
-                            {Array.from({ length: 12 }, (_, i) => i + 1).map((num) => (
-                              <SelectItem key={num} value={num.toString()}>
-                                {num} {num === 1 ? 'Guest' : 'Guests'}
-                              </SelectItem>
-                            ))}
+                            {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                              (num) => (
+                                <SelectItem key={num} value={num.toString()}>
+                                  {num}{" "}
+                                  {num === 1
+                                    ? t("reservations.form.guest.singular")
+                                    : t("reservations.form.guest.plural")}
+                                </SelectItem>
+                              )
+                            )}
                           </SelectContent>
                         </Select>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Special Requests (Optional)</Label>
+                      <Label htmlFor="message">
+                        {t("reservations.form.requests")}
+                      </Label>
                       <Textarea
                         id="message"
                         value={formData.message}
-                        onChange={(e) => handleInputChange('message', e.target.value)}
-                        placeholder="Any special dietary requirements, celebration notes, or seating preferences..."
+                        onChange={(e) =>
+                          handleInputChange("message", e.target.value)
+                        }
+                        placeholder={t(
+                          "reservations.form.placeholder.requests"
+                        )}
                         rows={4}
                         className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold resize-none"
                       />
@@ -201,11 +299,11 @@ const Reservations = () => {
                       className="w-full bg-primary-gold hover:bg-yellow-600 text-white py-3 text-lg font-medium"
                       size="lg"
                     >
-                      Book Table
+                      {t("reservations.form.submit")}
                     </Button>
 
                     <p className="text-sm text-gray-600 text-center">
-                      * We'll confirm your reservation within 2 hours via phone or email
+                      {t("reservations.form.confirmation")}
                     </p>
                   </form>
                 ) : (
@@ -223,10 +321,10 @@ const Reservations = () => {
                       <CheckCircle className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                      Reservation Submitted!
+                      {t("reservations.form.success.title")}
                     </h3>
                     <p className="text-gray-600">
-                      Thank you for choosing Turmeric. We'll contact you within 2 hours to confirm your reservation.
+                      {t("reservations.form.success.message")}
                     </p>
                   </motion.div>
                 )}
@@ -246,7 +344,7 @@ const Reservations = () => {
               <CardHeader className="bg-gray-900 text-white rounded-t-lg">
                 <CardTitle className="flex items-center space-x-2 pt-[0px] pr-[0px] pb-[10px] pl-[0px]">
                   <Clock className="w-6 h-6" />
-                  <span>Operating Hours</span>
+                  <span>{t("reservations.hours.title")}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -263,7 +361,11 @@ const Reservations = () => {
                       <span className="font-medium text-gray-800">
                         {schedule.day}
                       </span>
-                      <span className={`font-semibold ${schedule.isOpen ? 'text-green-600' : 'text-red-500'}`}>
+                      <span
+                        className={`font-semibold ${
+                          schedule.isOpen ? "text-green-600" : "text-red-500"
+                        }`}
+                      >
                         {schedule.hours}
                       </span>
                     </motion.div>
@@ -271,7 +373,7 @@ const Reservations = () => {
                 </div>
                 <div className="mt-6 p-4 bg-primary-gold/10 rounded-lg">
                   <p className="text-sm text-gray-700">
-                    <strong>Note:</strong> We recommend making reservations in advance, especially for weekend dining.
+                    <strong>Note:</strong> {t("reservations.hours.note")}
                   </p>
                 </div>
               </CardContent>
@@ -280,7 +382,7 @@ const Reservations = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Reservations
+export default Reservations;
