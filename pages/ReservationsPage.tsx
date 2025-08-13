@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Clock, Phone, MapPin, Calendar, Users, Mail, MessageCircle } from 'lucide-react'
 import { Button } from '../components/ui/button'

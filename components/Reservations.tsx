@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { Calendar, Clock, Users, Phone, Mail, CheckCircle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'

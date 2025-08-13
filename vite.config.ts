@@ -17,12 +17,12 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          ui: ['motion', 'lucide-react'],
+          ui: ['framer-motion', 'lucide-react'],
         },
       },
     },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'motion', 'lucide-react'],
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
   },
 })

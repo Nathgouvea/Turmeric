@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { Leaf, Heart, Sparkles, Users, Award } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import BotanicalDecor from './BotanicalDecor'

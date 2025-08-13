@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from './ui/button'
 import { useLanguage } from '../contexts/LanguageContext'
