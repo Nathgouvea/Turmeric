@@ -148,7 +148,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 text-sm text-gray-400"
             >
-              <span>{t("footer.copyright")}</span>
+              <span>© 2025 Turmeric Restaurant. Made with</span>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{
