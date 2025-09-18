@@ -152,7 +152,6 @@ const Reservations = () => {
                   <form
                     action="https://formspree.io/f/xwpqajpp"
                     method="POST"
-                    onSubmit={handleSubmit}
                     className="space-y-6"
                   >
                     <div className="grid md:grid-cols-2 gap-4">
@@ -164,10 +163,6 @@ const Reservations = () => {
                           id="name"
                           name="name"
                           type="text"
-                          value={formData.name}
-                          onChange={(e) =>
-                            handleInputChange("name", e.target.value)
-                          }
                           placeholder={t("reservations.form.placeholder.name")}
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
@@ -181,10 +176,6 @@ const Reservations = () => {
                           id="phone"
                           name="phone"
                           type="tel"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            handleInputChange("phone", e.target.value)
-                          }
                           placeholder={t("reservations.form.placeholder.phone")}
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
@@ -200,10 +191,6 @@ const Reservations = () => {
                         id="email"
                         name="email"
                         type="email"
-                        value={formData.email}
-                        onChange={(e) =>
-                          handleInputChange("email", e.target.value)
-                        }
                         placeholder={t("reservations.form.placeholder.email")}
                         required
                         className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
@@ -219,10 +206,6 @@ const Reservations = () => {
                           id="date"
                           name="date"
                           type="date"
-                          value={formData.date}
-                          onChange={(e) =>
-                            handleInputChange("date", e.target.value)
-                          }
                           required
                           className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
                           min={new Date().toISOString().split("T")[0]}
@@ -232,66 +215,40 @@ const Reservations = () => {
                         <Label htmlFor="time">
                           {t("reservations.form.time")}
                         </Label>
-                        <Select
+                        <select
                           name="time"
-                          value={formData.time}
-                          onValueChange={(value) =>
-                            handleInputChange("time", value)
-                          }
+                          required
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
                         >
-                          <SelectTrigger
-                            className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
-                            aria-label={t("reservations.form.time")}
-                          >
-                            <SelectValue
-                              placeholder={t(
-                                "reservations.form.placeholder.time"
-                              )}
-                            />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {timeSlots.map((slot) => (
-                              <SelectItem key={slot} value={slot}>
-                                {slot}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                          <option value="">{t("reservations.form.placeholder.time")}</option>
+                          {timeSlots.map((slot) => (
+                            <option key={slot} value={slot}>
+                              {slot}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="guests">
                           {t("reservations.form.guests")}
                         </Label>
-                        <Select
+                        <select
                           name="guests"
-                          value={formData.guests}
-                          onValueChange={(value) =>
-                            handleInputChange("guests", value)
-                          }
+                          required
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
                         >
-                          <SelectTrigger
-                            className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
-                            aria-label={t("reservations.form.guests")}
-                          >
-                            <SelectValue
-                              placeholder={t(
-                                "reservations.form.placeholder.guests"
-                              )}
-                            />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {Array.from({ length: 12 }, (_, i) => i + 1).map(
-                              (num) => (
-                                <SelectItem key={num} value={num.toString()}>
-                                  {num}{" "}
-                                  {num === 1
-                                    ? t("reservations.form.guest.singular")
-                                    : t("reservations.form.guest.plural")}
-                                </SelectItem>
-                              )
-                            )}
-                          </SelectContent>
-                        </Select>
+                          <option value="">{t("reservations.form.placeholder.guests")}</option>
+                          {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                            (num) => (
+                              <option key={num} value={num.toString()}>
+                                {num}{" "}
+                                {num === 1
+                                  ? t("reservations.form.guest.singular")
+                                  : t("reservations.form.guest.plural")}
+                              </option>
+                            )
+                          )}
+                        </select>
                       </div>
                     </div>
 
@@ -299,18 +256,14 @@ const Reservations = () => {
                       <Label htmlFor="message">
                         {t("reservations.form.requests")}
                       </Label>
-                      <Textarea
+                      <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={(e) =>
-                          handleInputChange("message", e.target.value)
-                        }
                         placeholder={t(
                           "reservations.form.placeholder.requests"
                         )}
                         rows={4}
-                        className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold resize-none"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold resize-none"
                       />
                     </div>
 
