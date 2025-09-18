@@ -89,8 +89,8 @@ const Reservations = () => {
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
+    // Don't prevent default - let the form submit to Formspree
+    // Show success state immediately
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
