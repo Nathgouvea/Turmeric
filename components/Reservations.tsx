@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Users, Mail, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
@@ -110,6 +110,16 @@ const Reservations = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  // Check for URL parameters to show success message
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('submitted') === 'true') {
+      setIsSubmitted(true);
+      // Clean up the URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
   return (
     <section id="reservations" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,9 +162,9 @@ const Reservations = () => {
                   <form
                     action="https://formspree.io/f/xwpqajpp"
                     method="POST"
-                    onSubmit={() => setIsSubmitted(true)}
                     className="space-y-6"
                   >
+                    <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}?submitted=true`} />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">
@@ -306,19 +316,21 @@ const Reservations = () => {
                     </h3>
                     <div className="space-y-3 text-gray-600">
                       <p className="text-lg">
-                        Thank you for your reservation request. We have received your booking details.
+                        Thank you for your reservation request. We have received
+                        your booking details.
                       </p>
                       <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                         <p className="font-semibold text-yellow-800 mb-2">
                           ⏰ Confirmation Timeline
                         </p>
                         <p className="text-yellow-700">
-                          We will confirm your reservation within <strong>24 hours</strong> via email or phone call. 
-                          Please keep your phone available for our confirmation call.
+                          We will confirm your reservation within{" "}
+                          <strong>24 hours</strong> via email or phone call.
                         </p>
                       </div>
                       <p className="text-sm text-gray-500">
-                        If you don't hear from us within 24 hours, please contact us directly.
+                        If you don't hear from us within 24 hours, please
+                        contact us directly.
                       </p>
                     </div>
                     <Button
