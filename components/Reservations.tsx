@@ -152,6 +152,7 @@ const Reservations = () => {
                   <form
                     action="https://formspree.io/f/xwpqajpp"
                     method="POST"
+                    onSubmit={() => setIsSubmitted(true)}
                     className="space-y-6"
                   >
                     <div className="grid md:grid-cols-2 gap-4">
@@ -220,7 +221,9 @@ const Reservations = () => {
                           required
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
                         >
-                          <option value="">{t("reservations.form.placeholder.time")}</option>
+                          <option value="">
+                            {t("reservations.form.placeholder.time")}
+                          </option>
                           {timeSlots.map((slot) => (
                             <option key={slot} value={slot}>
                               {slot}
@@ -237,7 +240,9 @@ const Reservations = () => {
                           required
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
                         >
-                          <option value="">{t("reservations.form.placeholder.guests")}</option>
+                          <option value="">
+                            {t("reservations.form.placeholder.guests")}
+                          </option>
                           {Array.from({ length: 12 }, (_, i) => i + 1).map(
                             (num) => (
                               <option key={num} value={num.toString()}>
@@ -296,12 +301,32 @@ const Reservations = () => {
                     >
                       <CheckCircle className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                      {t("reservations.form.success.title")}
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                      Reservation Submitted Successfully!
                     </h3>
-                    <p className="text-gray-600">
-                      {t("reservations.form.success.message")}
-                    </p>
+                    <div className="space-y-3 text-gray-600">
+                      <p className="text-lg">
+                        Thank you for your reservation request. We have received your booking details.
+                      </p>
+                      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <p className="font-semibold text-yellow-800 mb-2">
+                          ⏰ Confirmation Timeline
+                        </p>
+                        <p className="text-yellow-700">
+                          We will confirm your reservation within <strong>24 hours</strong> via email or phone call. 
+                          Please keep your phone available for our confirmation call.
+                        </p>
+                      </div>
+                      <p className="text-sm text-gray-500">
+                        If you don't hear from us within 24 hours, please contact us directly.
+                      </p>
+                    </div>
+                    <Button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-6 bg-primary-gold hover:bg-yellow-600 text-white"
+                    >
+                      Make Another Reservation
+                    </Button>
                   </motion.div>
                 )}
               </CardContent>
