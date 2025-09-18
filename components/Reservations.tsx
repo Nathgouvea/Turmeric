@@ -162,6 +162,7 @@ const Reservations = () => {
                         </Label>
                         <Input
                           id="name"
+                          name="name"
                           type="text"
                           value={formData.name}
                           onChange={(e) =>
@@ -178,6 +179,7 @@ const Reservations = () => {
                         </Label>
                         <Input
                           id="phone"
+                          name="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={(e) =>
@@ -196,6 +198,7 @@ const Reservations = () => {
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) =>
@@ -214,6 +217,7 @@ const Reservations = () => {
                         </Label>
                         <Input
                           id="date"
+                          name="date"
                           type="date"
                           value={formData.date}
                           onChange={(e) =>
@@ -229,6 +233,7 @@ const Reservations = () => {
                           {t("reservations.form.time")}
                         </Label>
                         <Select
+                          name="time"
                           value={formData.time}
                           onValueChange={(value) =>
                             handleInputChange("time", value)
@@ -258,6 +263,7 @@ const Reservations = () => {
                           {t("reservations.form.guests")}
                         </Label>
                         <Select
+                          name="guests"
                           value={formData.guests}
                           onValueChange={(value) =>
                             handleInputChange("guests", value)
@@ -295,6 +301,7 @@ const Reservations = () => {
                       </Label>
                       <Textarea
                         id="message"
+                        name="message"
                         value={formData.message}
                         onChange={(e) =>
                           handleInputChange("message", e.target.value)
