@@ -149,7 +149,12 @@ const Reservations = () => {
               </CardHeader>
               <CardContent className="p-8">
                 {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    action="https://formspree.io/f/xwpqajpp"
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">
