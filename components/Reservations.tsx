@@ -638,7 +638,7 @@ const Reservations = () => {
                         <select
                           name="time"
                           required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
+                          className="w-full px-3 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold h-9"
                         >
                           <option value="">
                             {t("reservations.form.placeholder.time")}
@@ -657,7 +657,7 @@ const Reservations = () => {
                         <select
                           name="guests"
                           required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold"
+                          className="w-full px-3 border border-gray-300 rounded-md focus:border-primary-gold focus:ring-primary-gold h-9"
                         >
                           <option value="">
                             {t("reservations.form.placeholder.guests")}
