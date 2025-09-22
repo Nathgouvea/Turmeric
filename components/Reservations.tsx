@@ -32,6 +32,7 @@ const Reservations = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+1");
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [countrySearchTerm, setCountrySearchTerm] = useState("");
+  const [dateError, setDateError] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -389,11 +390,61 @@ const Reservations = () => {
       country.country.toLowerCase().includes(countrySearchTerm.toLowerCase())
   );
 
+  // Function to check if a date is on a closed day
+  const isClosedDay = (date: Date) => {
+    const dayOfWeek = date.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const dayNames = [
+      "sunday",
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+    ];
+    const dayName = dayNames[dayOfWeek];
+
+    // Find the operating hours for this day
+    const daySchedule = operatingHours.find((schedule) =>
+      schedule.day.toLowerCase().includes(dayName)
+    );
+
+    return daySchedule ? !daySchedule.isOpen : false;
+  };
+
+  // Function to get disabled dates for the date input
+  const getDisabledDates = (): string[] => {
+    const today = new Date();
+    const maxDate = new Date();
+    maxDate.setMonth(today.getMonth() + 3); // Allow booking up to 3 months ahead
+
+    const disabledDates: string[] = [];
+    const currentDate = new Date(today);
+
+    while (currentDate <= maxDate) {
+      if (isClosedDay(currentDate)) {
+        disabledDates.push(currentDate.toISOString().split("T")[0]);
+      }
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    return disabledDates;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
+
+    // Check if selected date is on a closed day
+    const selectedDate = formData.get("date") as string;
+    if (selectedDate && isClosedDay(new Date(selectedDate))) {
+      setDateError(
+        "Sorry, we are closed on Mondays. Please select a different date."
+      );
+      return;
+    }
 
     // Add country code to phone number
     const phoneNumber = formData.get("phone") as string;
@@ -622,14 +673,34 @@ const Reservations = () => {
                         <Label htmlFor="date">
                           {t("reservations.form.date")}
                         </Label>
-                        <Input
-                          id="date"
-                          name="date"
-                          type="date"
-                          required
-                          className="border-gray-300 focus:border-primary-gold focus:ring-primary-gold"
-                          min={new Date().toISOString().split("T")[0]}
-                        />
+                        <div>
+                          <Input
+                            id="date"
+                            name="date"
+                            type="date"
+                            required
+                            className={`border-gray-300 focus:border-primary-gold focus:ring-primary-gold ${
+                              dateError ? "border-red-500" : ""
+                            }`}
+                            min={new Date().toISOString().split("T")[0]}
+                            onChange={(e) => {
+                              const selectedDate = new Date(e.target.value);
+                              if (isClosedDay(selectedDate)) {
+                                e.target.value = "";
+                                setDateError(
+                                  "Sorry, we are closed on Mondays. Please select a different date."
+                                );
+                              } else {
+                                setDateError("");
+                              }
+                            }}
+                          />
+                          {dateError && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {dateError}
+                            </p>
+                          )}
+                        </div>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="time">
