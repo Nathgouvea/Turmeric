@@ -24,8 +24,9 @@ const OpeningStatus = () => {
       // Parse the hour from the time string
       const hour = parseInt(portugalTime.split(":")[0]);
 
-      // Restaurant is open from 15:00 to 23:00
-      const isCurrentlyOpen = hour >= 15 && hour < 23;
+      // Restaurant is open from 14:00 to 22:00, closed on Mondays
+      const currentDay = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
+      const isCurrentlyOpen = hour >= 14 && hour < 22 && currentDay !== 1;
       setIsOpen(isCurrentlyOpen);
     };
 

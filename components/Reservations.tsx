@@ -33,6 +33,21 @@ const Reservations = () => {
 
   const operatingHours = [
     {
+      day: t("reservations.hours.days.monday"),
+      hours: "Closed",
+      isOpen: false,
+    },
+    {
+      day: t("reservations.hours.days.tuesday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
+      day: t("reservations.hours.days.wednesday"),
+      hours: t("reservations.hours.time"),
+      isOpen: true,
+    },
+    {
       day: t("reservations.hours.days.thursday"),
       hours: t("reservations.hours.time"),
       isOpen: true,
@@ -52,24 +67,11 @@ const Reservations = () => {
       hours: t("reservations.hours.time"),
       isOpen: true,
     },
-    {
-      day: t("reservations.hours.days.monday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.tuesday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.wednesday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
   ];
 
   const timeSlots = [
+    "14:00",
+    "14:30",
     "15:00",
     "15:30",
     "16:00",
@@ -84,8 +86,6 @@ const Reservations = () => {
     "20:30",
     "21:00",
     "21:30",
-    "22:00",
-    "22:30",
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -113,7 +113,7 @@ const Reservations = () => {
   // Check for URL parameters to show success message
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('submitted') === 'true') {
+    if (urlParams.get("submitted") === "true") {
       setIsSubmitted(true);
       // Clean up the URL
       window.history.replaceState({}, document.title, window.location.pathname);
@@ -164,7 +164,11 @@ const Reservations = () => {
                     method="POST"
                     className="space-y-6"
                   >
-                    <input type="hidden" name="_next" value={`${window.location.origin}${window.location.pathname}?submitted=true`} />
+                    <input
+                      type="hidden"
+                      name="_next"
+                      value={`${window.location.origin}${window.location.pathname}?submitted=true`}
+                    />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">

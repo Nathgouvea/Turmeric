@@ -175,7 +175,7 @@ const translations = {
     "reservations.hours.days.monday": "Monday",
     "reservations.hours.days.tuesday": "Tuesday",
     "reservations.hours.days.wednesday": "Wednesday",
-    "reservations.hours.time": "15:00 - 23:00",
+    "reservations.hours.time": "14:00 - 22:00",
     language: "en",
 
     // Contact
@@ -185,7 +185,7 @@ const translations = {
     "contact.visit": "Visit Us",
     "contact.call": "Call Us",
     "contact.hours": "Opening Hours",
-    "contact.daily": "Daily: 15:00 - 23:00",
+    "contact.daily": "Daily: 14:00 - 22:00",
     "contact.follow": "Follow Us",
     "contact.form.subject": "Subject",
     "contact.form.message": "Message",
@@ -193,7 +193,7 @@ const translations = {
 
     // Footer
     "footer.hours": "Opening Hours",
-    "footer.daily": "Daily: 15:00 - 23:00",
+    "footer.daily": "Daily: 14:00 - 22:00",
     "footer.location": "Location",
     "footer.contact": "Contact",
     "footer.follow": "Follow Us",
@@ -204,7 +204,7 @@ const translations = {
       "Experience authentic Pakistani and Indian cuisine in the heart of Porto. We pride ourselves on serving halal, high-quality dishes with exceptional service in an elegant atmosphere.",
     "footer.rating": "4.9/5 Customer Rating",
     "footer.dailyhours": "Daily Opening Hours",
-    "footer.everyday": "15:00 - 23:00 (Every Day)",
+    "footer.everyday": "14:00 - 22:00 (Every Day)",
     "footer.recommendation": "Reservations recommended • Walk-ins welcome",
     "footer.copyright":
       "© 2025 Turmeric Restaurant. Made with ❤️ by Picky Pixels Studio",
@@ -640,7 +640,7 @@ const translations = {
     "reservations.hours.days.monday": "Segunda-feira",
     "reservations.hours.days.tuesday": "Terça-feira",
     "reservations.hours.days.wednesday": "Quarta-feira",
-    "reservations.hours.time": "15:00 - 23:00",
+    "reservations.hours.time": "14:00 - 22:00",
     language: "pt",
 
     // Contact
@@ -650,7 +650,7 @@ const translations = {
     "contact.visit": "Visite-nos",
     "contact.call": "Telefone",
     "contact.hours": "Horário de Funcionamento",
-    "contact.daily": "Diariamente: 15:00 - 23:00",
+    "contact.daily": "Diariamente: 14:00 - 22:00",
     "contact.follow": "Siga-nos",
     "contact.form.subject": "Assunto",
     "contact.form.message": "Mensagem",
@@ -658,7 +658,7 @@ const translations = {
 
     // Footer
     "footer.hours": "Horário de Funcionamento",
-    "footer.daily": "Diariamente: 15:00 - 23:00",
+    "footer.daily": "Diariamente: 14:00 - 22:00",
     "footer.location": "Localização",
     "footer.contact": "Contacto",
     "footer.follow": "Siga-nos",
@@ -669,7 +669,7 @@ const translations = {
       "Experiencie culinária autêntica paquistanesa e indiana no coração do Porto. Orgulhamo-nos de servir pratos halal de alta qualidade com serviço excecional num ambiente elegante.",
     "footer.rating": "4.9/5 Avaliação dos Clientes",
     "footer.dailyhours": "Horário Diário de Funcionamento",
-    "footer.everyday": "15:00 - 23:00 (Todos os Dias)",
+    "footer.everyday": "14:00 - 22:00 (Todos os Dias)",
     "footer.recommendation": "Reservas recomendadas • Entrada livre bem-vinda",
     "footer.copyright":
       "© 2025 Restaurante Turmeric. Feito com ❤️ por Picky Pixels Studio",
@@ -1104,7 +1104,7 @@ const translations = {
     "reservations.hours.days.monday": "الاثنين",
     "reservations.hours.days.tuesday": "الثلاثاء",
     "reservations.hours.days.wednesday": "الأربعاء",
-    "reservations.hours.time": "15:00 - 23:00",
+    "reservations.hours.time": "14:00 - 22:00",
     language: "ar",
 
     // Contact
@@ -1114,7 +1114,7 @@ const translations = {
     "contact.visit": "زرنا",
     "contact.call": "اتصل بنا",
     "contact.hours": "ساعات العمل",
-    "contact.daily": "يومياً: 15:00 - 23:00",
+    "contact.daily": "يومياً: 14:00 - 22:00",
     "contact.follow": "تابعنا",
     "contact.form.subject": "الموضوع",
     "contact.form.message": "الرسالة",
@@ -1122,7 +1122,7 @@ const translations = {
 
     // Footer
     "footer.hours": "ساعات العمل",
-    "footer.daily": "يومياً: 15:00 - 23:00",
+    "footer.daily": "يومياً: 14:00 - 22:00",
     "footer.location": "الموقع",
     "footer.contact": "اتصل بنا",
     "footer.follow": "تابعنا",
@@ -1133,7 +1133,7 @@ const translations = {
       "استمتع بالمأكولات الباكستانية والهندية الأصيلة في قلب بورتو. نفخر بتقديم أطباق حلال عالية الجودة مع خدمة استثنائية في جو أنيق.",
     "footer.rating": "4.9/5 تقييم العملاء",
     "footer.dailyhours": "ساعات العمل اليومية",
-    "footer.everyday": "15:00 - 23:00 (كل يوم)",
+    "footer.everyday": "14:00 - 22:00 (كل يوم)",
     "footer.recommendation": "الحجوزات موصى بها • الدخول بدون حجز مرحب به",
     "footer.copyright": "© 2025 مطعم تورمرك. صنع بـ ❤️ من استوديو بيكي بيكسيلز",
     "footer.privacy": "سياسة الخصوصية",
@@ -1546,7 +1546,7 @@ const translations = {
     "reservations.hours.days.monday": "Lundi",
     "reservations.hours.days.tuesday": "Mardi",
     "reservations.hours.days.wednesday": "Mercredi",
-    "reservations.hours.time": "15:00 - 23:00",
+    "reservations.hours.time": "14:00 - 22:00",
     language: "fr",
 
     // Contact
@@ -1556,7 +1556,7 @@ const translations = {
     "contact.visit": "Visitez-nous",
     "contact.call": "Appelez-nous",
     "contact.hours": "Heures d'Ouverture",
-    "contact.daily": "Quotidiennement : 15:00 - 23:00",
+    "contact.daily": "Quotidiennement : 14:00 - 22:00",
     "contact.follow": "Suivez-nous",
     "contact.form.subject": "Sujet",
     "contact.form.message": "Message",
@@ -1564,7 +1564,7 @@ const translations = {
 
     // Footer
     "footer.hours": "Heures d'Ouverture",
-    "footer.daily": "Quotidiennement : 15:00 - 23:00",
+    "footer.daily": "Quotidiennement : 14:00 - 22:00",
     "footer.location": "Localisation",
     "footer.contact": "Contact",
     "footer.follow": "Suivez-nous",
@@ -1575,7 +1575,7 @@ const translations = {
       "Découvrez la cuisine pakistanaise et indienne authentique au cœur de Porto. Nous sommes fiers de servir des plats halal de haute qualité avec un service exceptionnel dans une atmosphère élégante.",
     "footer.rating": "4.9/5 Évaluation des Clients",
     "footer.dailyhours": "Heures d'Ouverture Quotidiennes",
-    "footer.everyday": "15:00 - 23:00 (Tous les Jours)",
+    "footer.everyday": "14:00 - 22:00 (Tous les Jours)",
     "footer.recommendation":
       "Réservations recommandées • Entrée libre bienvenue",
     "footer.copyright":
@@ -2020,7 +2020,7 @@ const translations = {
     "reservations.hours.days.monday": "Lunes",
     "reservations.hours.days.tuesday": "Martes",
     "reservations.hours.days.wednesday": "Miércoles",
-    "reservations.hours.time": "15:00 - 23:00",
+    "reservations.hours.time": "14:00 - 22:00",
     language: "es",
 
     // Contact
@@ -2030,7 +2030,7 @@ const translations = {
     "contact.visit": "Visítanos",
     "contact.call": "Llámanos",
     "contact.hours": "Horario de Funcionamiento",
-    "contact.daily": "Diariamente: 15:00 - 23:00",
+    "contact.daily": "Diariamente: 14:00 - 22:00",
     "contact.follow": "Síguenos",
     "contact.form.subject": "Asunto",
     "contact.form.message": "Mensaje",
@@ -2038,7 +2038,7 @@ const translations = {
 
     // Footer
     "footer.hours": "Horario de Funcionamiento",
-    "footer.daily": "Diariamente: 15:00 - 23:00",
+    "footer.daily": "Diariamente: 14:00 - 22:00",
     "footer.location": "Ubicación",
     "footer.contact": "Contacto",
     "footer.follow": "Síguenos",
@@ -2049,7 +2049,7 @@ const translations = {
       "Experimenta la cocina auténtica pakistaní e india en el corazón de Oporto. Nos enorgullece servir platos halal de alta calidad con servicio excepcional en un ambiente elegante.",
     "footer.rating": "4.9/5 Valoración de Clientes",
     "footer.dailyhours": "Horario Diario de Funcionamiento",
-    "footer.everyday": "15:00 - 23:00 (Todos los Días)",
+    "footer.everyday": "14:00 - 22:00 (Todos los Días)",
     "footer.recommendation": "Reservas recomendadas • Entrada libre bienvenida",
     "footer.copyright":
       "© 2025 Restaurante Turmeric. Hecho con ❤️ por Picky Pixels Studio",

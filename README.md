@@ -187,4 +187,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Turmeric Restaurant** - R. Formosa 429, 4000-253 Porto, Portugal  
-📞 +351 22 208 6926 | 🕒 Daily 15:00–23:00
+📞 +351 22 208 6926 | 🕒 Daily 14:00–22:00 (Closed Mondays)
