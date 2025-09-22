@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Users, Mail, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
@@ -88,37 +88,49 @@ const Reservations = () => {
     "21:30",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // Don't prevent default - let the form submit to Formspree
-    // Show success state immediately
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        date: "",
-        time: "",
-        guests: "",
-        message: "",
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      // Submit to Formspree using fetch API
+      const response = await fetch("https://formspree.io/f/xwpqajpp", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
-    }, 3000);
+
+      if (response.ok) {
+        // Show success state
+        setIsSubmitted(true);
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          form.reset();
+        }, 3000);
+      } else {
+        // Handle error case
+        console.error("Form submission failed");
+        alert(
+          "There was an error submitting your reservation. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert(
+        "There was a network error. Please check your connection and try again."
+      );
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
-
-  // Check for URL parameters to show success message
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("submitted") === "true") {
-      setIsSubmitted(true);
-      // Clean up the URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }, []);
 
   return (
     <section id="reservations" className="py-20 bg-white">
@@ -159,16 +171,7 @@ const Reservations = () => {
               </CardHeader>
               <CardContent className="p-8">
                 {!isSubmitted ? (
-                  <form
-                    action="https://formspree.io/f/xwpqajpp"
-                    method="POST"
-                    className="space-y-6"
-                  >
-                    <input
-                      type="hidden"
-                      name="_next"
-                      value={`${window.location.origin}${window.location.pathname}?submitted=true`}
-                    />
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">
