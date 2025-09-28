@@ -596,7 +596,7 @@ const Reservations = () => {
                             </button>
 
                             {isCountryDropdownOpen && (
-                              <div className="absolute z-50 mt-1 w-80 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+                              <div className="absolute z-50 mt-1 w-80 max-w-[calc(100vw-2rem)] bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
                                 <div className="p-2 border-b border-gray-200">
                                   <div className="relative">
                                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
