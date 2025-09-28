@@ -63,6 +63,9 @@ const translations = {
     "about.feature4.title": "Attention to Detail",
     "about.feature4.desc":
       "From elegant presentation to personalized service, we believe luxury lies in the details. Every aspect of your experience is thoughtfully crafted.",
+    "about.alcoholFree.title": "Alcohol-Free Dining",
+    "about.alcoholFree.desc":
+      "We are proud to be an alcohol-free restaurant, creating a welcoming environment for all guests while focusing on the authentic flavors of our cuisine and premium non-alcoholic beverages.",
     "about.why.title": "What Makes Turmeric Special",
     "about.why.recipe.title": "Authentic Recipes",
     "about.why.recipe.desc":
@@ -168,6 +171,11 @@ const translations = {
     "reservations.hours.title": "Operating Hours",
     "reservations.hours.note":
       "Note: We recommend making reservations in advance, especially for weekend dining.",
+    "reservations.alcoholFree.title": "🍷 Alcohol-Free Restaurant",
+    "reservations.alcoholFree.message":
+      "We are proud to be an alcohol-free restaurant, creating a welcoming environment for all guests. We focus on authentic cuisine flavors and offer premium non-alcoholic beverages.",
+    "reservations.confirmation.alcoholFree":
+      "🍷 Please note: We are an alcohol-free restaurant, creating a welcoming environment for all guests.",
     "reservations.hours.days.thursday": "Thursday",
     "reservations.hours.days.friday": "Friday",
     "reservations.hours.days.saturday": "Saturday",
@@ -528,6 +536,9 @@ const translations = {
     "about.feature4.title": "Atenção aos Detalhes",
     "about.feature4.desc":
       "Desde a apresentação elegante ao serviço personalizado, acreditamos que o luxo está nos detalhes. Cada aspeto da sua experiência é cuidadosamente elaborado.",
+    "about.alcoholFree.title": "Restaurante Sem Álcool",
+    "about.alcoholFree.desc":
+      "Temos orgulho em ser um restaurante sem álcool, criando um ambiente acolhedor para todos os hóspedes enquanto nos focamos nos sabores autênticos da nossa cozinha e bebidas não alcoólicas premium.",
     "about.why.title": "O Que Torna o Turmeric Especial",
     "about.why.recipe.title": "Receitas Autênticas",
     "about.why.recipe.desc":
@@ -633,6 +644,11 @@ const translations = {
     "reservations.hours.title": "Horário de Funcionamento",
     "reservations.hours.note":
       "Nota: Recomendamos fazer reservas com antecedência, especialmente para jantares de fim de semana.",
+    "reservations.alcoholFree.title": "🍷 Restaurante Sem Álcool",
+    "reservations.alcoholFree.message":
+      "Temos orgulho em ser um restaurante sem álcool, criando um ambiente acolhedor para todos os hóspedes. Focamos nos sabores autênticos da nossa cozinha e oferecemos bebidas não alcoólicas premium.",
+    "reservations.confirmation.alcoholFree":
+      "🍷 Por favor, note: Somos um restaurante sem álcool, criando um ambiente acolhedor para todos os hóspedes.",
     "reservations.hours.days.thursday": "Quinta-feira",
     "reservations.hours.days.friday": "Sexta-feira",
     "reservations.hours.days.saturday": "Sábado",
@@ -993,6 +1009,9 @@ const translations = {
     "about.feature4.title": "الاهتمام بالتفاصيل",
     "about.feature4.desc":
       "من العرض الأنيق إلى الخدمة الشخصية، نؤمن أن الفخامة تكمن في التفاصيل. كل جانب من تجربتك يتم تصميمه بعناية.",
+    "about.alcoholFree.title": "مطعم خالي من الكحول",
+    "about.alcoholFree.desc":
+      "نحن فخورون بأن نكون مطعماً خالياً من الكحول، مما يخلق بيئة ترحيبية لجميع الضيوف مع التركيز على النكهات الأصيلة لمطبخنا والمشروبات غير الكحولية المتميزة.",
     "about.why.title": "ما الذي يجعل تورمرك مميزاً",
     "about.why.recipe.title": "وصفات أصيلة",
     "about.why.recipe.desc":
@@ -1097,6 +1116,11 @@ const translations = {
     "reservations.hours.title": "ساعات العمل",
     "reservations.hours.note":
       "ملاحظة: نوصي بالحجز مسبقاً، خاصة لتناول الطعام في عطلة نهاية الأسبوع.",
+    "reservations.alcoholFree.title": "🍷 مطعم خالي من الكحول",
+    "reservations.alcoholFree.message":
+      "نحن فخورون بأن نكون مطعماً خالياً من الكحول، مما يخلق بيئة ترحيبية لجميع الضيوف. نركز على النكهات الأصيلة لمطبخنا ونقدم مشروبات غير كحولية متميزة.",
+    "reservations.confirmation.alcoholFree":
+      "🍷 يرجى ملاحظة: نحن مطعم خالي من الكحول، مما يخلق بيئة ترحيبية لجميع الضيوف.",
     "reservations.hours.days.thursday": "الخميس",
     "reservations.hours.days.friday": "الجمعة",
     "reservations.hours.days.saturday": "السبت",
@@ -1434,6 +1458,9 @@ const translations = {
     "about.feature4.title": "Attention aux Détails",
     "about.feature4.desc":
       "De la présentation élégante au service personnalisé, nous croyons que le luxe réside dans les détails. Chaque aspect de votre expérience est soigneusement conçu.",
+    "about.alcoholFree.title": "Restaurant Sans Alcool",
+    "about.alcoholFree.desc":
+      "Nous sommes fiers d'être un restaurant sans alcool, créant un environnement accueillant pour tous les invités tout en nous concentrant sur les saveurs authentiques de notre cuisine et les boissons non alcoolisées premium.",
     "about.why.title": "Ce qui rend Turmeric Spécial",
     "about.why.recipe.title": "Recettes Authentiques",
     "about.why.recipe.desc":
@@ -1539,6 +1566,11 @@ const translations = {
     "reservations.hours.title": "Heures d'Ouverture",
     "reservations.hours.note":
       "Note : Nous recommandons de faire des réservations à l'avance, surtout pour les dîners de week-end.",
+    "reservations.alcoholFree.title": "🍷 Restaurant Sans Alcool",
+    "reservations.alcoholFree.message":
+      "Nous sommes fiers d'être un restaurant sans alcool, créant un environnement accueillant pour tous les invités. Nous nous concentrons sur les saveurs authentiques de notre cuisine et offrons des boissons non alcoolisées premium.",
+    "reservations.confirmation.alcoholFree":
+      "🍷 Veuillez noter : Nous sommes un restaurant sans alcool, créant un environnement accueillant pour tous les invités.",
     "reservations.hours.days.thursday": "Jeudi",
     "reservations.hours.days.friday": "Vendredi",
     "reservations.hours.days.saturday": "Samedi",
@@ -1908,6 +1940,9 @@ const translations = {
     "about.feature4.title": "Atención al Detalle",
     "about.feature4.desc":
       "Desde la presentación elegante hasta el servicio personalizado, creemos que el lujo está en los detalles. Cada aspecto de tu experiencia se elabora cuidadosamente.",
+    "about.alcoholFree.title": "Restaurante Sin Alcohol",
+    "about.alcoholFree.desc":
+      "Estamos orgullosos de ser un restaurante sin alcohol, creando un ambiente acogedor para todos los invitados mientras nos enfocamos en los sabores auténticos de nuestra cocina y bebidas no alcohólicas premium.",
     "about.why.title": "Lo Que Hace Especial a Turmeric",
     "about.why.recipe.title": "Recetas Auténticas",
     "about.why.recipe.desc":
@@ -2013,6 +2048,11 @@ const translations = {
     "reservations.hours.title": "Horario de Funcionamiento",
     "reservations.hours.note":
       "Nota: Recomendamos hacer reservas con anticipación, especialmente para cenas de fin de semana.",
+    "reservations.alcoholFree.title": "🍷 Restaurante Sin Alcohol",
+    "reservations.alcoholFree.message":
+      "Estamos orgullosos de ser un restaurante sin alcohol, creando un ambiente acogedor para todos los invitados. Nos enfocamos en los sabores auténticos de nuestra cocina y ofrecemos bebidas no alcohólicas premium.",
+    "reservations.confirmation.alcoholFree":
+      "🍷 Por favor, tenga en cuenta: Somos un restaurante sin alcohol, creando un ambiente acogedor para todos los invitados.",
     "reservations.hours.days.thursday": "Jueves",
     "reservations.hours.days.friday": "Viernes",
     "reservations.hours.days.saturday": "Sábado",

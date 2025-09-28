@@ -10,6 +10,7 @@ import {
   CheckCircle,
   Search,
   ChevronDown,
+  Wine,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -808,6 +809,14 @@ const Reservations = () => {
                           <strong>24 hours</strong> via email or phone call.
                         </p>
                       </div>
+
+                      {/* Alcohol-Free Notice */}
+                      <div className="bg-gradient-to-r from-primary-gold/20 to-yellow-100/30 border border-primary-gold/30 rounded-lg p-4">
+                        <p className="text-primary-gold font-medium text-sm">
+                          {t("reservations.confirmation.alcoholFree")}
+                        </p>
+                      </div>
+
                       <p className="text-sm text-gray-500">
                         If you don't hear from us within 24 hours, please
                         contact us directly.
@@ -870,6 +879,24 @@ const Reservations = () => {
                     <strong>Note:</strong> {t("reservations.hours.note")}
                   </p>
                 </div>
+
+                {/* Alcohol-Free Notice */}
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary-gold/20 to-yellow-100/30 rounded-lg border border-primary-gold/30">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0">
+                      <Wine className="w-6 h-6 text-primary-gold" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary-gold mb-2">
+                        {t("reservations.alcoholFree.title")}
+                      </h4>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {t("reservations.alcoholFree.message")}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="mt-4">
                   <OpeningStatus />
                 </div>
