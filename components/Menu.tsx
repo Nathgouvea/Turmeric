@@ -517,7 +517,7 @@ const Menu = () => {
               className={`transition-all duration-300 ${
                 activeCategory === category.id
                   ? "bg-primary-gold hover:bg-yellow-600 text-white shadow-lg scale-105"
-                  : "border-2 border-gray-200 hover:border-primary-gold hover:text-primary-gold bg-white"
+                  : "border-2 border-gray-400 hover:border-primary-gold hover:text-primary-gold bg-white text-gray-700 shadow-sm"
               }`}
               onClick={() => setActiveCategory(category.id)}
               aria-label={`Filter menu by ${category.name} category`}

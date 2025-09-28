@@ -23,7 +23,7 @@
   --destructive-foreground: #ffffff;
   --border: rgba(0, 0, 0, 0.1);
   --input: transparent;
-  --input-background: #f3f3f5;
+  --input-background: #ffffff;
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
@@ -192,4 +192,21 @@ html {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Force white background for all input elements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  background-color: #ffffff !important;
+}
+
+/* Force white background for menu filter buttons when not active */
+button[data-slot="button"]:not(.bg-primary-gold) {
+  background-color: #ffffff !important;
 }
