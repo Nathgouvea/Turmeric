@@ -85,7 +85,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white px-8 py-4 text-lg shadow-xl transition-all duration-300 transform hover:scale-105 bg-transparent"
+              className="border-2 border-white text-primary-gold hover:bg-primary-gold hover:text-white px-8 py-4 text-lg shadow-xl transition-all duration-300 transform hover:scale-105 bg-white"
               onClick={() => scrollToSection("#reservations")}
               aria-label={`${t("hero.cta.reserve")} - Make a reservation`}
             >

@@ -232,8 +232,14 @@ textarea.dark-form-input::placeholder {
 }
 
 /* Force white background for menu filter buttons when not active */
-button[data-slot="button"]:not(.bg-primary-gold) {
+button[data-slot="button"]:not(.bg-primary-gold):not(.bg-white):not(:hover) {
   background-color: #ffffff !important;
+}
+
+/* Hero section reserve button hover state */
+#hero button.bg-white:hover {
+  background-color: white !important;
+  color: black !important;
 }
 
 /* Prevent horizontal overflow */
