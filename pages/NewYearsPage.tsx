@@ -278,14 +278,14 @@ const NewYearsPage = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-gray-900"></div>
-          {/* Decorative elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary-gold/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-40 h-40 bg-primary-gold/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-primary-gold/10 rounded-full blur-2xl animate-pulse delay-500"></div>
-          {/* Sparkle effects */}
-          <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-primary-gold rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-ping delay-300"></div>
-          <div className="absolute bottom-1/3 left-1/5 w-2 h-2 bg-primary-gold rounded-full animate-ping delay-700"></div>
+          {/* Decorative elements - hidden on mobile to prevent horizontal scroll */}
+          <div className="hidden sm:block absolute top-20 left-10 w-32 h-32 bg-primary-gold/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="hidden sm:block absolute top-40 right-20 w-40 h-40 bg-primary-gold/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="hidden sm:block absolute bottom-40 left-1/4 w-24 h-24 bg-primary-gold/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+          {/* Sparkle effects - hidden on mobile to prevent horizontal scroll */}
+          <div className="hidden sm:block absolute top-1/4 left-1/3 w-2 h-2 bg-primary-gold rounded-full animate-ping"></div>
+          <div className="hidden sm:block absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-ping delay-300"></div>
+          <div className="hidden sm:block absolute bottom-1/3 left-1/5 w-2 h-2 bg-primary-gold rounded-full animate-ping delay-700"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
