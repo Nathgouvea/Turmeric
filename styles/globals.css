@@ -199,7 +199,7 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Force white background for all input elements */
+/* Force white background for all input elements (except dark themed forms) */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -209,6 +209,26 @@ input[type="search"],
 textarea,
 select {
   background-color: #ffffff !important;
+}
+
+/* Dark themed form inputs (New Year's page) */
+input[type="text"].dark-form-input,
+input[type="email"].dark-form-input,
+input[type="tel"].dark-form-input,
+input[type="date"].dark-form-input,
+input[type="password"].dark-form-input,
+input[type="search"].dark-form-input,
+textarea.dark-form-input,
+select.dark-form-input {
+  background-color: rgba(55, 65, 81, 0.5) !important;
+  color: white !important;
+}
+
+input[type="text"].dark-form-input::placeholder,
+input[type="email"].dark-form-input::placeholder,
+input[type="tel"].dark-form-input::placeholder,
+textarea.dark-form-input::placeholder {
+  color: #9ca3af !important;
 }
 
 /* Force white background for menu filter buttons when not active */

@@ -8,18 +8,43 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { useRouter } from "../contexts/RouterContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+// Check if NYE banner is visible (not closed by user in last 24 hours)
+const isBannerVisible = () => {
+  if (typeof window === "undefined") return true;
+  const lastClosed = localStorage.getItem("nyeBannerClosed");
+  if (lastClosed) {
+    const timeSinceClosed = Date.now() - parseInt(lastClosed);
+    if (timeSinceClosed < 24 * 60 * 60 * 1000) {
+      return false;
+    }
+  }
+  return true;
+};
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(true);
   const { t } = useLanguage();
   const { currentPage, navigateTo } = useRouter();
 
   useEffect(() => {
+    // Check banner visibility on mount
+    setBannerVisible(isBannerVisible());
+
+    // Listen for banner close events
+    const handleBannerClose = () => setBannerVisible(false);
+    window.addEventListener("nyeBannerClosed", handleBannerClose);
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("nyeBannerClosed", handleBannerClose);
+    };
   }, []);
 
   const navItems = [
@@ -78,7 +103,9 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        bannerVisible ? "top-[44px]" : "top-0"
+      } ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
