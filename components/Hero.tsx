@@ -95,9 +95,9 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Decorative elements - reduced and more subtle */}
-      <div className="absolute top-1/4 left-10 w-16 h-16 border border-primary-gold/20 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-1/3 right-10 w-12 h-12 border border-primary-gold/20 rounded-full animate-pulse delay-1000"></div>
+      {/* Decorative elements - hidden on mobile to prevent horizontal scroll */}
+      <div className="hidden sm:block absolute top-1/4 left-10 w-16 h-16 border border-primary-gold/20 rounded-full animate-pulse"></div>
+      <div className="hidden sm:block absolute bottom-1/3 right-10 w-12 h-12 border border-primary-gold/20 rounded-full animate-pulse delay-1000"></div>
     </section>
   );
 };
