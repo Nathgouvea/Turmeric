@@ -104,7 +104,7 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
       className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-        bannerVisible ? "top-[44px]" : "top-0"
+        bannerVisible ? "top-[72px] sm:top-[44px]" : "top-0"
       } ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
