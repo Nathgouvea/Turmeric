@@ -118,25 +118,6 @@ const Footer = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Opening Hours Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-12 p-6 bg-primary-gold rounded-xl"
-        >
-          <div className="text-center">
-            <h4 className="text-xl font-semibold text-white mb-2">
-              {t("footer.dailyhours")}
-            </h4>
-            <p className="text-white text-lg">{t("footer.everyday")}</p>
-            <p className="text-white/90 text-sm mt-2">
-              {t("footer.recommendation")}
-            </p>
-          </div>
-        </motion.div>
       </div>
 
       {/* Bottom Bar */}

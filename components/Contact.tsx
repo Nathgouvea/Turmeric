@@ -5,9 +5,25 @@ import { MapPin, Phone, Clock, Star, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import OpeningStatus from "./OpeningStatus";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useOpeningHours } from "../hooks/useOpeningHours";
 
 const Contact = () => {
   const { t } = useLanguage();
+  const { hoursData, loading: hoursLoading, error: hoursError } = useOpeningHours();
+
+  // Get today's hours from the API data
+  const getTodayHours = () => {
+    if (!hoursData?.weekdayDescriptions?.length) return null;
+    const jsDay = new Date().getDay();
+    const googleIndex = jsDay === 0 ? 6 : jsDay - 1;
+    const todayDesc = hoursData.weekdayDescriptions[googleIndex];
+    if (!todayDesc) return null;
+    const hoursPart = todayDesc.includes(":") ? todayDesc.split(":").slice(1).join(":").trim() : todayDesc;
+    return hoursPart;
+  };
+
+  const todayHours = getTodayHours();
+
   return (
     <section
       id="contact"
@@ -98,9 +114,21 @@ const Contact = () => {
                         <h4 className="font-semibold text-gray-800 mb-2">
                           {t("contact.hours")}
                         </h4>
-                        <p className="text-gray-600 mb-2">
-                          {t("contact.daily")}
-                        </p>
+                        {hoursLoading ? (
+                          <div className="h-5 bg-gray-200 rounded w-32 animate-pulse mb-2" />
+                        ) : hoursError || !todayHours ? (
+                          <a
+                            href="https://maps.google.com/?q=Turmeric+Restaurant+Porto"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-primary-gold hover:underline text-sm mb-2"
+                          >
+                            {t("ui.checkHoursOnGoogle") || "Check hours on Google"}
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ) : (
+                          <p className="text-gray-600 mb-2">{todayHours}</p>
+                        )}
                         <OpeningStatus />
                       </div>
                     </div>
