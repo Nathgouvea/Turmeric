@@ -11,6 +11,7 @@ import {
   Search,
   ChevronDown,
   Wine,
+  ExternalLink,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -26,6 +27,7 @@ import {
 } from "./ui/select";
 import { useLanguage } from "../contexts/LanguageContext";
 import OpeningStatus from "./OpeningStatus";
+import { useOpeningHours, parseWeekdayDescriptions } from "../hooks/useOpeningHours";
 
 const Reservations = () => {
   const { t } = useLanguage();
@@ -45,43 +47,24 @@ const Reservations = () => {
     message: "",
   });
 
-  const operatingHours = [
-    {
-      day: t("reservations.hours.days.monday"),
-      hours: "Closed",
-      isOpen: false,
-    },
-    {
-      day: t("reservations.hours.days.tuesday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.wednesday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.thursday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.friday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.saturday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-    {
-      day: t("reservations.hours.days.sunday"),
-      hours: t("reservations.hours.time"),
-      isOpen: true,
-    },
-  ];
+  // Fetch opening hours from Google Places API
+  const { hoursData, loading: hoursLoading, error: hoursError } = useOpeningHours();
+
+  // Day labels for translation
+  const dayLabels: { [key: string]: string } = {
+    monday: t("reservations.hours.days.monday"),
+    tuesday: t("reservations.hours.days.tuesday"),
+    wednesday: t("reservations.hours.days.wednesday"),
+    thursday: t("reservations.hours.days.thursday"),
+    friday: t("reservations.hours.days.friday"),
+    saturday: t("reservations.hours.days.saturday"),
+    sunday: t("reservations.hours.days.sunday"),
+  };
+
+  // Parse API data - returns null if no data available
+  const operatingHours = hoursData?.weekdayDescriptions
+    ? parseWeekdayDescriptions(hoursData.weekdayDescriptions, dayLabels)
+    : null;
 
   const timeSlots = [
     "14:00",
@@ -851,29 +834,55 @@ const Reservations = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
-                <div className="space-y-3">
-                  {operatingHours.map((schedule, index) => (
-                    <motion.div
-                      key={schedule.day}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
+                {hoursLoading ? (
+                  <div className="space-y-3">
+                    {[...Array(7)].map((_, index) => (
+                      <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                        <div className="h-4 bg-gray-200 rounded w-24 animate-pulse" />
+                        <div className="h-4 bg-gray-200 rounded w-32 animate-pulse" />
+                      </div>
+                    ))}
+                  </div>
+                ) : hoursError || !operatingHours ? (
+                  <div className="text-center py-8">
+                    <p className="text-gray-600 mb-4">
+                      {t("ui.couldNotFetchHours") || "Could not load opening hours"}
+                    </p>
+                    <a
+                      href="https://maps.google.com/?q=Turmeric+Restaurant+Porto"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary-gold hover:underline font-medium"
                     >
-                      <span className="font-medium text-gray-800">
-                        {schedule.day}
-                      </span>
-                      <span
-                        className={`font-semibold ${
-                          schedule.isOpen ? "text-green-600" : "text-red-500"
-                        }`}
+                      {t("ui.checkHoursOnGoogle") || "Check hours on Google"}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {operatingHours.map((schedule, index) => (
+                      <motion.div
+                        key={schedule.day}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
                       >
-                        {schedule.hours}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
+                        <span className="font-medium text-gray-800">
+                          {schedule.day}
+                        </span>
+                        <span
+                          className={`font-semibold ${
+                            schedule.isOpen ? "text-green-600" : "text-red-500"
+                          }`}
+                        >
+                          {schedule.hours}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
                 <div className="mt-6 p-4 bg-primary-gold/10 rounded-lg">
                   <p className="text-sm text-gray-700">
                     <strong>Note:</strong> {t("reservations.hours.note")}

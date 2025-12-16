@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Clock } from "lucide-react";
+import { Clock, ExternalLink } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+
+const API_URL = "https://turmeric-rlzdgiboj-nathielles-projects.vercel.app/api/opening-hours";
 
 interface OpeningHoursData {
   isOpen: boolean;
@@ -16,42 +18,26 @@ interface OpeningHoursData {
 const OpeningStatus = () => {
   const [isOpen, setIsOpen] = useState<boolean | null>(null);
   const [currentTime, setCurrentTime] = useState("");
-  const [hoursData, setHoursData] = useState<OpeningHoursData | null>(null);
+  const [error, setError] = useState(false);
   const { t } = useLanguage();
 
-  // Fetch opening hours from Google Places API via our serverless function
+  // Fetch opening hours from Google Places API via Vercel serverless function
   useEffect(() => {
     const fetchOpeningHours = async () => {
       try {
-        const response = await fetch("/api/opening-hours");
+        const response = await fetch(API_URL);
         if (response.ok) {
           const data: OpeningHoursData = await response.json();
-          setHoursData(data);
           setIsOpen(data.isOpen);
+          setError(false);
         } else {
-          // Fallback to local calculation if API fails
-          fallbackToLocalCalculation();
+          console.error("Failed to fetch opening hours:", response.status);
+          setError(true);
         }
-      } catch (error) {
-        console.error("Failed to fetch opening hours:", error);
-        // Fallback to local calculation if API fails
-        fallbackToLocalCalculation();
+      } catch (err) {
+        console.error("Failed to fetch opening hours:", err);
+        setError(true);
       }
-    };
-
-    const fallbackToLocalCalculation = () => {
-      const portugalTime = new Date().toLocaleString("en-US", {
-        timeZone: "Europe/Lisbon",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      });
-      const hour = parseInt(portugalTime.split(":")[0]);
-      const currentDay = new Date().getDay();
-      // Fallback hours: 12:00-15:00 and 19:00-22:00, closed Mondays
-      const isLunchTime = hour >= 12 && hour < 15;
-      const isDinnerTime = hour >= 19 && hour < 22;
-      setIsOpen((isLunchTime || isDinnerTime) && currentDay !== 1);
     };
 
     fetchOpeningHours();
@@ -77,6 +63,25 @@ const OpeningStatus = () => {
     const interval = setInterval(updateTime, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  // Show error state - link to Google for hours
+  if (error) {
+    return (
+      <div className="flex items-center space-x-2">
+        <Clock className="w-4 h-4 text-gray-600" />
+        <span className="text-sm text-gray-600">{currentTime} (Portugal) -</span>
+        <a
+          href="https://maps.google.com/?q=Turmeric+Restaurant+Porto"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-primary-gold hover:underline flex items-center gap-1"
+        >
+          {t("ui.checkHoursOnGoogle") || "Check hours on Google"}
+          <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+    );
+  }
 
   // Show loading state while fetching
   if (isOpen === null) {
