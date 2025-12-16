@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-// Cache the response for 1 hour (3600 seconds)
-const CACHE_MAX_AGE = 3600;
+// Cache the response for 15 minutes (900 seconds)
+const CACHE_MAX_AGE = 900;
 
 interface GooglePlaceResponse {
   regularOpeningHours?: {
