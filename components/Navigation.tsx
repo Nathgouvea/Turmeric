@@ -5,37 +5,14 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "../contexts/LanguageContext";
-import { useRouter } from "../contexts/RouterContext";
 import LanguageSwitcher from "./LanguageSwitcher";
-
-// Check if NYE banner is visible (not closed by user in last 24 hours)
-const isBannerVisible = () => {
-  if (typeof window === "undefined") return true;
-  const lastClosed = localStorage.getItem("nyeBannerClosed");
-  if (lastClosed) {
-    const timeSinceClosed = Date.now() - parseInt(lastClosed);
-    if (timeSinceClosed < 24 * 60 * 60 * 1000) {
-      return false;
-    }
-  }
-  return true;
-};
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [bannerVisible, setBannerVisible] = useState(true);
   const { t } = useLanguage();
-  const { currentPage, navigateTo } = useRouter();
 
   useEffect(() => {
-    // Check banner visibility on mount
-    setBannerVisible(isBannerVisible());
-
-    // Listen for banner close events
-    const handleBannerClose = () => setBannerVisible(false);
-    window.addEventListener("nyeBannerClosed", handleBannerClose);
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -43,47 +20,16 @@ const Navigation = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("nyeBannerClosed", handleBannerClose);
     };
   }, []);
 
   const navItems = [
-    { name: t("nav.home"), action: () => navigateTo("home") },
-    {
-      name: t("nav.gallery"),
-      action: () => {
-        navigateTo("home");
-        setTimeout(() => scrollToSection("#gallery"), 100);
-      },
-    },
-    {
-      name: t("nav.menu"),
-      action: () => {
-        navigateTo("home");
-        setTimeout(() => scrollToSection("#menu"), 100);
-      },
-    },
-    {
-      name: t("nav.about"),
-      action: () => {
-        navigateTo("home");
-        setTimeout(() => scrollToSection("#about"), 100);
-      },
-    },
-    {
-      name: t("nav.reservations"),
-      action: () => {
-        navigateTo("home");
-        setTimeout(() => scrollToSection("#reservations"), 100);
-      },
-    },
-    {
-      name: t("nav.contact"),
-      action: () => {
-        navigateTo("home");
-        setTimeout(() => scrollToSection("#contact"), 100);
-      },
-    },
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.gallery"), href: "#gallery" },
+    { name: t("nav.menu"), href: "#menu" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.reservations"), href: "#reservations" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -94,7 +40,7 @@ const Navigation = () => {
   };
 
   const handleNavClick = (item: (typeof navItems)[0]) => {
-    item.action();
+    scrollToSection(item.href);
     setIsMobileMenuOpen(false);
   };
 
@@ -103,9 +49,7 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-        bannerVisible ? "top-[72px] sm:top-[44px]" : "top-0"
-      } ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
@@ -115,7 +59,7 @@ const Navigation = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0 cursor-pointer"
-            onClick={() => navigateTo("home")}
+            onClick={() => scrollToSection("#home")}
           >
             <h1 className="font-great-vibes text-3xl md:text-4xl text-primary-gold">
               Turmeric
