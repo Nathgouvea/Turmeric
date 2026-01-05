@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useLanguage } from "../contexts/LanguageContext";
-import { useRouter } from "../contexts/RouterContext";
 
 const Hero = () => {
   const { t } = useLanguage();
-  const { navigateTo } = useRouter();
 
   const scrollToSection = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
