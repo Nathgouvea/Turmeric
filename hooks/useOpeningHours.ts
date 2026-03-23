@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "https://turmeric-rlzdgiboj-nathielles-projects.vercel.app/api/opening-hours";
+const API_URL = "/api/opening-hours";
 
 export interface OpeningHoursData {
   isOpen: boolean;
