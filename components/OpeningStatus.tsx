@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Clock, ExternalLink } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const API_URL = "/api/opening-hours";
+const API_URL = "https://turmeric-two.vercel.app/api/opening-hours";
 
 interface OpeningHoursData {
   isOpen: boolean;
