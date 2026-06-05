@@ -114,13 +114,11 @@ const translations = {
     "menu.categories.starters": "Starters",
     "menu.categories.grills": "Grills",
     "menu.categories.curryChicken": "Chicken Curry",
-    "menu.categories.curryBeef": "Beef Curry",
     "menu.categories.curryLamb": "Lamb Curry",
     "menu.categories.curryFish": "Fish & Shrimp Curry",
     "menu.categories.curryVeg": "Vegetarian Curry",
     "menu.categories.bread": "Bread",
     "menu.categories.rice": "Rice",
-    "menu.categories.desserts": "Desserts",
     "menu.categories.drinks": "Drinks",
 
     // Gallery
@@ -269,21 +267,18 @@ const translations = {
     "menu.items.chickenTikka.title": "Chicken Tikka",
     "menu.items.chickenTikka.description":
       "Boneless chicken, marinated in yogurt, spices and grilled until juicy and tender with a hint of smokiness",
-    "menu.items.tandooriFish.title": "Tandoori Fish",
-    "menu.items.tandooriFish.description":
-      "Marinated Dorada fish grilled in a tandoor, featuring smoky flavors and a blend of aromatic spices",
-    "menu.items.murghSeekhKebab.title": "Murgh Seekh Kebab",
-    "menu.items.murghSeekhKebab.description":
-      "Grilled minced chicken kebabs, seasoned with aromatic spices",
-    "menu.items.beefSeekhKebab.title": "Beef Seekh Kebab",
-    "menu.items.beefSeekhKebab.description":
-      "Grilled minced beef kebabs, seasoned with aromatic spices",
+    "menu.items.grilledFish.title": "Grilled Fish",
+    "menu.items.grilledFish.description":
+      "Dorada fish marinated and grilled in a tandoor, delivering a smoky flavour while preserving its natural taste (with bones)",
     "menu.items.chickenHariyaliTikka.title": "Chicken Hariyali Tikka",
     "menu.items.chickenHariyaliTikka.description":
       "Boneless chicken, marinated in yogurt, mint, coriander and grilled until juicy and tender",
     "menu.items.tandooriChicken.title": "Tandoori Chicken",
     "menu.items.tandooriChicken.description":
       "Chicken marinated in a blend of yogurt and spices, then grilled in a tandoor for a smoky, flavorful finish",
+    "menu.items.paneerTikka.title": "Paneer Tikka",
+    "menu.items.paneerTikka.description":
+      "Marinated Indian cheese grilled with aromatic spices, offering a smoky, tender and flavorful taste",
 
     // Menu Items - Chicken Curry
     "menu.items.butterChicken.title": "Butter Chicken",
@@ -312,17 +307,6 @@ const translations = {
       "Spicy South Indian style chicken curry",
     "menu.items.chickenPalak.title": "Chicken Palak",
     "menu.items.chickenPalak.description": "Chicken in creamy spinach sauce",
-
-    // Menu Items - Beef Curry
-    "menu.items.beefCurry.title": "Beef Curry",
-    "menu.items.beefCurry.description":
-      "Slow-cooked beef in traditional curry sauce",
-    "menu.items.beefMadras.title": "Beef Madras",
-    "menu.items.beefMadras.description":
-      "Spicy beef curry with coconut and curry leaves",
-    "menu.items.beefVindaloo.title": "Beef Vindaloo",
-    "menu.items.beefVindaloo.description":
-      "Fiery beef curry with vinegar and spices",
 
     // Menu Items - Lamb Curry
     "menu.items.lambKadhai.title": "Lamb Kadhai",
@@ -406,9 +390,6 @@ const translations = {
     "menu.items.chickenBiryani.title": "Chicken Biryani",
     "menu.items.chickenBiryani.description":
       "Fragrant basmati rice with spiced chicken",
-    "menu.items.beefBiryani.title": "Beef Biryani",
-    "menu.items.beefBiryani.description":
-      "Aromatic rice with tender beef pieces",
     "menu.items.lambBiryani.title": "Lamb Biryani",
     "menu.items.lambBiryani.description":
       "Aromatic rice with tender lamb pieces",
@@ -422,14 +403,6 @@ const translations = {
     "menu.items.biryaniRice.description": "Spiced basmati rice without meat",
     "menu.items.zeeraRice.title": "Zeera Rice",
     "menu.items.zeeraRice.description": "Basmati rice with cumin seeds",
-
-    // Menu Items - Desserts
-    "menu.items.rasmalai.title": "Rasmalai",
-    "menu.items.rasmalai.description":
-      "Cottage cheese dumplings in sweet milk with cardamom",
-    "menu.items.kheer.title": "Kheer",
-    "menu.items.kheer.description":
-      "Rice pudding with nuts and aromatic spices",
 
     // Menu Items - Drinks
     "menu.items.mangoLassi.title": "Mango Lassi",
@@ -462,16 +435,25 @@ const translations = {
     "menu.items.liptonIceTeaLemon.description": "Iced tea with lemon flavor",
     "menu.items.pedrasLimao.title": "Pedras Limao 250ml",
     "menu.items.pedrasLimao.description": "Portuguese lemon sparkling water",
-    "menu.items.pedrasSalgadas250.title": "Pedras Salgadas 250ml",
+    "menu.items.pedrasSalgadas250.title": "Gas Water 250ml",
     "menu.items.pedrasSalgadas250.description":
       "Portuguese sparkling mineral water",
-    "menu.items.pedrasSalgadas500.title": "Pedras Salgadas 500ml",
+    "menu.items.pedrasSalgadas500.title": "Gas Water 750ml",
     "menu.items.pedrasSalgadas500.description":
       "Portuguese sparkling mineral water",
-    "menu.items.water500.title": "Water 500ml",
+    "menu.items.water500.title": "Still Water 500ml",
     "menu.items.water500.description": "Still water",
-    "menu.items.water1500.title": "Water 1.5Ltr",
+    "menu.items.water1500.title": "Still Water 1.5Ltr",
     "menu.items.water1500.description": "Still water large bottle",
+    "menu.items.cafe.title": "Café (Espresso)",
+    "menu.items.cafe.description": "Espresso coffee",
+    "menu.items.caffeLatte.title": "Caffè Latte",
+    "menu.items.caffeLatte.description": "Espresso with steamed milk",
+    "menu.items.americano.title": "Americano",
+    "menu.items.americano.description": "Espresso with hot water",
+    "menu.items.infusedTea.title": "Infused Tea",
+    "menu.items.infusedTea.description":
+      "Black, green, ginger lemon, mint or chamomile",
 
     // Additional UI Elements
     "ui.restaurantInformation": "Restaurant Information",
@@ -589,13 +571,11 @@ const translations = {
     "menu.categories.starters": "Entradas",
     "menu.categories.grills": "Grelhados",
     "menu.categories.curryChicken": "Caril de Frango",
-    "menu.categories.curryBeef": "Caril de Vaca",
     "menu.categories.curryLamb": "Caril de Cordeiro",
     "menu.categories.curryFish": "Caril de Peixe e Camarão",
     "menu.categories.curryVeg": "Caril Vegetariano",
     "menu.categories.bread": "Pão",
     "menu.categories.rice": "Arroz",
-    "menu.categories.desserts": "Sobremesas",
     "menu.categories.drinks": "Bebidas",
 
     // Gallery
@@ -744,21 +724,18 @@ const translations = {
     "menu.items.chickenTikka.title": "Chicken Tikka",
     "menu.items.chickenTikka.description":
       "Boneless chicken, marinated in yogurt, spices and grilled until juicy and tender with a hint of smokiness",
-    "menu.items.tandooriFish.title": "Tandoori Fish",
-    "menu.items.tandooriFish.description":
-      "Marinated Dorada fish grilled in a tandoor, featuring smoky flavors and a blend of aromatic spices",
-    "menu.items.murghSeekhKebab.title": "Murgh Seekh Kebab",
-    "menu.items.murghSeekhKebab.description":
-      "Grilled minced chicken kebabs, seasoned with aromatic spices",
-    "menu.items.beefSeekhKebab.title": "Beef Seekh Kebab",
-    "menu.items.beefSeekhKebab.description":
-      "Grilled minced beef kebabs, seasoned with aromatic spices",
+    "menu.items.grilledFish.title": "Grilled Fish",
+    "menu.items.grilledFish.description":
+      "Dorada fish marinated and grilled in a tandoor, delivering a smoky flavour while preserving its natural taste (with bones)",
     "menu.items.chickenHariyaliTikka.title": "Chicken Hariyali Tikka",
     "menu.items.chickenHariyaliTikka.description":
       "Boneless chicken, marinated in yogurt, mint, coriander and grilled until juicy and tender",
     "menu.items.tandooriChicken.title": "Tandoori Chicken",
     "menu.items.tandooriChicken.description":
       "Chicken marinated in a blend of yogurt and spices, then grilled in a tandoor for a smoky, flavorful finish",
+    "menu.items.paneerTikka.title": "Paneer Tikka",
+    "menu.items.paneerTikka.description":
+      "Marinated Indian cheese grilled with aromatic spices, offering a smoky, tender and flavorful taste",
 
     // Menu Items - Chicken Curry
     "menu.items.butterChicken.title": "Butter Chicken",
@@ -787,17 +764,6 @@ const translations = {
       "Spicy South Indian style chicken curry",
     "menu.items.chickenPalak.title": "Chicken Palak",
     "menu.items.chickenPalak.description": "Chicken in creamy spinach sauce",
-
-    // Menu Items - Beef Curry
-    "menu.items.beefCurry.title": "Beef Curry",
-    "menu.items.beefCurry.description":
-      "Slow-cooked beef in traditional curry sauce",
-    "menu.items.beefMadras.title": "Beef Madras",
-    "menu.items.beefMadras.description":
-      "Spicy beef curry with coconut and curry leaves",
-    "menu.items.beefVindaloo.title": "Beef Vindaloo",
-    "menu.items.beefVindaloo.description":
-      "Fiery beef curry with vinegar and spices",
 
     // Menu Items - Lamb Curry
     "menu.items.lambKadhai.title": "Lamb Kadhai",
@@ -881,9 +847,6 @@ const translations = {
     "menu.items.chickenBiryani.title": "Chicken Biryani",
     "menu.items.chickenBiryani.description":
       "Fragrant basmati rice with spiced chicken",
-    "menu.items.beefBiryani.title": "Beef Biryani",
-    "menu.items.beefBiryani.description":
-      "Aromatic rice with tender beef pieces",
     "menu.items.lambBiryani.title": "Lamb Biryani",
     "menu.items.lambBiryani.description":
       "Aromatic rice with tender lamb pieces",
@@ -897,14 +860,6 @@ const translations = {
     "menu.items.biryaniRice.description": "Spiced basmati rice without meat",
     "menu.items.zeeraRice.title": "Zeera Rice",
     "menu.items.zeeraRice.description": "Basmati rice with cumin seeds",
-
-    // Menu Items - Desserts
-    "menu.items.rasmalai.title": "Rasmalai",
-    "menu.items.rasmalai.description":
-      "Cottage cheese dumplings in sweet milk with cardamom",
-    "menu.items.kheer.title": "Kheer",
-    "menu.items.kheer.description":
-      "Rice pudding with nuts and aromatic spices",
 
     // Menu Items - Drinks
     "menu.items.mangoLassi.title": "Mango Lassi",
@@ -937,16 +892,25 @@ const translations = {
     "menu.items.liptonIceTeaLemon.description": "Iced tea with lemon flavor",
     "menu.items.pedrasLimao.title": "Pedras Limao 250ml",
     "menu.items.pedrasLimao.description": "Portuguese lemon sparkling water",
-    "menu.items.pedrasSalgadas250.title": "Pedras Salgadas 250ml",
+    "menu.items.pedrasSalgadas250.title": "Gas Water 250ml",
     "menu.items.pedrasSalgadas250.description":
       "Portuguese sparkling mineral water",
-    "menu.items.pedrasSalgadas500.title": "Pedras Salgadas 500ml",
+    "menu.items.pedrasSalgadas500.title": "Gas Water 750ml",
     "menu.items.pedrasSalgadas500.description":
       "Portuguese sparkling mineral water",
-    "menu.items.water500.title": "Water 500ml",
+    "menu.items.water500.title": "Still Water 500ml",
     "menu.items.water500.description": "Still water",
-    "menu.items.water1500.title": "Water 1.5Ltr",
+    "menu.items.water1500.title": "Still Water 1.5Ltr",
     "menu.items.water1500.description": "Still water large bottle",
+    "menu.items.cafe.title": "Café (Espresso)",
+    "menu.items.cafe.description": "Espresso coffee",
+    "menu.items.caffeLatte.title": "Caffè Latte",
+    "menu.items.caffeLatte.description": "Espresso with steamed milk",
+    "menu.items.americano.title": "Americano",
+    "menu.items.americano.description": "Espresso with hot water",
+    "menu.items.infusedTea.title": "Infused Tea",
+    "menu.items.infusedTea.description":
+      "Black, green, ginger lemon, mint or chamomile",
 
     // Additional UI Elements
     "ui.restaurantInformation": "Restaurant Information",
@@ -1064,13 +1028,11 @@ const translations = {
     "menu.categories.starters": "المقبلات",
     "menu.categories.grills": "المشويات",
     "menu.categories.curryChicken": "كاري الدجاج",
-    "menu.categories.curryBeef": "كاري اللحم البقري",
     "menu.categories.curryLamb": "كاري الضأن",
     "menu.categories.curryFish": "كاري السمك والروبيان",
     "menu.categories.curryVeg": "كاري نباتي",
     "menu.categories.bread": "الخبز",
     "menu.categories.rice": "الأرز",
-    "menu.categories.desserts": "الحلويات",
     "menu.categories.drinks": "المشروبات",
 
     // Gallery
@@ -1215,21 +1177,18 @@ const translations = {
     "menu.items.chickenTikka.title": "تيكا الدجاج",
     "menu.items.chickenTikka.description":
       "دجاج بدون عظم، منقوع في الزبادي والتوابل ومشوي حتى يصبح عصيرياً وطرياً مع لمسة من النكهة المدخنة",
-    "menu.items.tandooriFish.title": "سمك تندوري",
-    "menu.items.tandooriFish.description":
-      "سمك دورادا منقوع ومشوي في التندور، يتميز بنكهات مدخنة ومزيج من التوابل العطرية",
-    "menu.items.murghSeekhKebab.title": "كاباب مورغ سيك",
-    "menu.items.murghSeekhKebab.description":
-      "كاباب دجاج مفروم مشوي، متبل بالتوابل العطرية",
-    "menu.items.beefSeekhKebab.title": "كاباب لحم بقري سيك",
-    "menu.items.beefSeekhKebab.description":
-      "كاباب لحم بقري مفروم مشوي، متبل بالتوابل العطرية",
+    "menu.items.grilledFish.title": "سمك مشوي",
+    "menu.items.grilledFish.description":
+      "سمك دورادا منقوع ومشوي في التندور، يقدم نكهة مدخنة مع الحفاظ على طعمه الطبيعي (مع العظم)",
     "menu.items.chickenHariyaliTikka.title": "تيكا الدجاج هاريالي",
     "menu.items.chickenHariyaliTikka.description":
       "دجاج بدون عظم، منقوع في الزبادي والنعناع والكزبرة ومشوي حتى يصبح عصيرياً وطرياً",
     "menu.items.tandooriChicken.title": "دجاج تندوري",
     "menu.items.tandooriChicken.description":
       "دجاج منقوع في مزيج من الزبادي والتوابل، ثم مشوي في التندور للحصول على نكهة مدخنة ولذيذة",
+    "menu.items.paneerTikka.title": "بانير تيكا",
+    "menu.items.paneerTikka.description":
+      "جبن هندي منقوع ومشوي بالتوابل العطرية، يقدم نكهة مدخنة وطرية ولذيذة",
 
     // Menu Items - Chicken Curry
     "menu.items.butterChicken.title": "دجاج بالزبدة",
@@ -1254,16 +1213,6 @@ const translations = {
       "كاري دجاج حار على الطريقة الجنوبية الهندية",
     "menu.items.chickenPalak.title": "دجاج بالسبانخ",
     "menu.items.chickenPalak.description": "دجاج في صلصة سبانخ كريمية",
-
-    // Menu Items - Beef Curry
-    "menu.items.beefCurry.title": "كاري اللحم البقري",
-    "menu.items.beefCurry.description":
-      "لحم بقري مطهو ببطء في صلصة كاري تقليدية",
-    "menu.items.beefMadras.title": "مدراس اللحم البقري",
-    "menu.items.beefMadras.description":
-      "كاري لحم بقري حار مع جوز هند وأوراق كاري",
-    "menu.items.beefVindaloo.title": "فيندالو اللحم البقري",
-    "menu.items.beefVindaloo.description": "كاري لحم بقري ناري مع خل وتوابل",
 
     // Menu Items - Lamb Curry
     "menu.items.lambKadhai.title": "كدهي الضأن",
@@ -1339,8 +1288,6 @@ const translations = {
     "menu.items.steamRice.description": "أرز بسمتي مطبوخ بسيط",
     "menu.items.chickenBiryani.title": "برياني الدجاج",
     "menu.items.chickenBiryani.description": "أرز بسمتي عطري مع دجاج متبل",
-    "menu.items.beefBiryani.title": "برياني اللحم البقري",
-    "menu.items.beefBiryani.description": "أرز عطري مع قطع لحم بقري طرية",
     "menu.items.lambBiryani.title": "برياني الضأن",
     "menu.items.lambBiryani.description": "أرز عطري مع قطع ضأن طرية",
     "menu.items.prawnBiryani.title": "برياني الروبيان",
@@ -1352,12 +1299,6 @@ const translations = {
     "menu.items.biryaniRice.description": "أرز بسمتي متبل بدون لحوم",
     "menu.items.zeeraRice.title": "أرز زيرا",
     "menu.items.zeeraRice.description": "أرز بسمتي مع بذور كمون",
-
-    // Menu Items - Desserts
-    "menu.items.rasmalai.title": "رسمالاي",
-    "menu.items.rasmalai.description": "كرات جبنة طازجة في حليب حلو مع هيل",
-    "menu.items.kheer.title": "خير",
-    "menu.items.kheer.description": "بودينغ أرز مع مكسرات وتوابل عطرية",
 
     // Menu Items - Drinks
     "menu.items.mangoLassi.title": "مانجو لاسي",
@@ -1390,14 +1331,23 @@ const translations = {
     "menu.items.liptonIceTeaLemon.description": "شاي مثلج بنكهة الليمون",
     "menu.items.pedrasLimao.title": "بيدراس ليماو 250مل",
     "menu.items.pedrasLimao.description": "مياه غازية برتغالية بنكهة الليمون",
-    "menu.items.pedrasSalgadas250.title": "مياه معدنية غازية برتغالية 250مل",
+    "menu.items.pedrasSalgadas250.title": "مياه غازية 250مل",
     "menu.items.pedrasSalgadas250.description": "مياه معدنية غازية برتغالية",
-    "menu.items.pedrasSalgadas500.title": "مياه معدنية غازية برتغالية 500مل",
+    "menu.items.pedrasSalgadas500.title": "مياه غازية 750مل",
     "menu.items.pedrasSalgadas500.description": "مياه معدنية غازية برتغالية",
-    "menu.items.water500.title": "ماء 500مل",
+    "menu.items.water500.title": "مياه عادية 500مل",
     "menu.items.water500.description": "ماء عادي",
-    "menu.items.water1500.title": "ماء 1.5لتر",
+    "menu.items.water1500.title": "مياه عادية 1.5لتر",
     "menu.items.water1500.description": "ماء عادي زجاجة كبيرة",
+    "menu.items.cafe.title": "قهوة (إسبريسو)",
+    "menu.items.cafe.description": "قهوة إسبريسو",
+    "menu.items.caffeLatte.title": "كافيه لاتيه",
+    "menu.items.caffeLatte.description": "إسبريسو مع حليب مبخّر",
+    "menu.items.americano.title": "أمريكانو",
+    "menu.items.americano.description": "إسبريسو مع ماء ساخن",
+    "menu.items.infusedTea.title": "شاي منقوع",
+    "menu.items.infusedTea.description":
+      "أسود، أخضر، زنجبيل وليمون، نعناع أو بابونج",
 
     // Additional UI Elements
     "ui.restaurantInformation": "معلومات المطعم",
@@ -1515,13 +1465,11 @@ const translations = {
     "menu.categories.starters": "Entrées",
     "menu.categories.grills": "Grillades",
     "menu.categories.curryChicken": "Curry de Poulet",
-    "menu.categories.curryBeef": "Curry de Bœuf",
     "menu.categories.curryLamb": "Curry d'Agneau",
     "menu.categories.curryFish": "Curry de Poisson et Crevettes",
     "menu.categories.curryVeg": "Curry Végétarien",
     "menu.categories.bread": "Pain",
     "menu.categories.rice": "Riz",
-    "menu.categories.desserts": "Desserts",
     "menu.categories.drinks": "Boissons",
 
     // Gallery
@@ -1671,21 +1619,18 @@ const translations = {
     "menu.items.chickenTikka.title": "Poulet Tikka",
     "menu.items.chickenTikka.description":
       "Poulet désossé, mariné dans du yaourt et des épices et grillé jusqu'à ce qu'il soit juteux et tendre avec une touche de fumée",
-    "menu.items.tandooriFish.title": "Poisson Tandoori",
-    "menu.items.tandooriFish.description":
-      "Poisson Dorada mariné grillé dans un tandoor, avec des saveurs fumées et un mélange d'épices aromatiques",
-    "menu.items.murghSeekhKebab.title": "Murgh Seekh Kebab",
-    "menu.items.murghSeekhKebab.description":
-      "Kebabs de poulet haché grillés, assaisonnés d'épices aromatiques",
-    "menu.items.beefSeekhKebab.title": "Bœuf Seekh Kebab",
-    "menu.items.beefSeekhKebab.description":
-      "Kebabs de bœuf haché grillés, assaisonnés d'épices aromatiques",
+    "menu.items.grilledFish.title": "Poisson Grillé",
+    "menu.items.grilledFish.description":
+      "Poisson Dorada mariné et grillé dans un tandoor, offrant une saveur fumée tout en préservant son goût naturel (avec arêtes)",
     "menu.items.chickenHariyaliTikka.title": "Poulet Hariyali Tikka",
     "menu.items.chickenHariyaliTikka.description":
       "Poulet désossé, mariné dans du yaourt, de la menthe et de la coriandre et grillé jusqu'à ce qu'il soit juteux et tendre",
     "menu.items.tandooriChicken.title": "Poulet Tandoori",
     "menu.items.tandooriChicken.description":
       "Poulet mariné dans un mélange de yaourt et d'épices, puis grillé dans un tandoor pour une finition fumée et savoureuse",
+    "menu.items.paneerTikka.title": "Paneer Tikka",
+    "menu.items.paneerTikka.description":
+      "Fromage indien mariné et grillé aux épices aromatiques, offrant une saveur fumée, tendre et savoureuse",
 
     // Menu Items - Chicken Curry
     "menu.items.butterChicken.title": "Poulet au Beurre",
@@ -1715,17 +1660,6 @@ const translations = {
     "menu.items.chickenPalak.title": "Poulet Palak",
     "menu.items.chickenPalak.description":
       "Poulet dans une sauce crémeuse aux épinards",
-
-    // Menu Items - Beef Curry
-    "menu.items.beefCurry.title": "Curry de Bœuf",
-    "menu.items.beefCurry.description":
-      "Bœuf mijoté dans une sauce curry traditionnelle",
-    "menu.items.beefMadras.title": "Bœuf Madras",
-    "menu.items.beefMadras.description":
-      "Curry de bœuf épicé à la noix de coco et aux feuilles de curry",
-    "menu.items.beefVindaloo.title": "Bœuf Vindaloo",
-    "menu.items.beefVindaloo.description":
-      "Curry de bœuf brûlant au vinaigre et aux épices",
 
     // Menu Items - Lamb Curry
     "menu.items.lambKadhai.title": "Agneau Kadhai",
@@ -1811,9 +1745,6 @@ const translations = {
     "menu.items.chickenBiryani.title": "Biryani au Poulet",
     "menu.items.chickenBiryani.description":
       "Riz basmati parfumé au poulet épicé",
-    "menu.items.beefBiryani.title": "Biryani au Bœuf",
-    "menu.items.beefBiryani.description":
-      "Riz aromatique avec morceaux de bœuf tendres",
     "menu.items.lambBiryani.title": "Biryani à l'Agneau",
     "menu.items.lambBiryani.description":
       "Riz aromatique avec morceaux d'agneau tendres",
@@ -1827,14 +1758,6 @@ const translations = {
     "menu.items.biryaniRice.description": "Riz basmati épicé sans viande",
     "menu.items.zeeraRice.title": "Riz Zeera",
     "menu.items.zeeraRice.description": "Riz basmati aux graines de cumin",
-
-    // Menu Items - Desserts
-    "menu.items.rasmalai.title": "Rasmalai",
-    "menu.items.rasmalai.description":
-      "Boulettes de fromage cottage dans du lait sucré à la cardamome",
-    "menu.items.kheer.title": "Kheer",
-    "menu.items.kheer.description":
-      "Riz au lait avec noix et épices aromatiques",
 
     // Menu Items - Drinks
     "menu.items.mangoLassi.title": "Lassi à la Mangue",
@@ -1872,16 +1795,25 @@ const translations = {
     "menu.items.liptonIceTeaLemon.description": "Thé glacé à saveur citron",
     "menu.items.pedrasLimao.title": "Pedras Limão 250ml",
     "menu.items.pedrasLimao.description": "Eau pétillante portugaise au citron",
-    "menu.items.pedrasSalgadas250.title": "Pedras Salgadas 250ml",
+    "menu.items.pedrasSalgadas250.title": "Eau Gazeuse 250ml",
     "menu.items.pedrasSalgadas250.description":
       "Eau minérale pétillante portugaise",
-    "menu.items.pedrasSalgadas500.title": "Pedras Salgadas 500ml",
+    "menu.items.pedrasSalgadas500.title": "Eau Gazeuse 750ml",
     "menu.items.pedrasSalgadas500.description":
       "Eau minérale pétillante portugaise",
-    "menu.items.water500.title": "Eau 500ml",
+    "menu.items.water500.title": "Eau Plate 500ml",
     "menu.items.water500.description": "Eau plate",
-    "menu.items.water1500.title": "Eau 1.5L",
+    "menu.items.water1500.title": "Eau Plate 1.5L",
     "menu.items.water1500.description": "Eau plate grande bouteille",
+    "menu.items.cafe.title": "Café (Espresso)",
+    "menu.items.cafe.description": "Café espresso",
+    "menu.items.caffeLatte.title": "Caffè Latte",
+    "menu.items.caffeLatte.description": "Espresso avec lait vapeur",
+    "menu.items.americano.title": "Americano",
+    "menu.items.americano.description": "Espresso allongé à l'eau chaude",
+    "menu.items.infusedTea.title": "Thé Infusé",
+    "menu.items.infusedTea.description":
+      "Noir, vert, gingembre citron, menthe ou camomille",
 
     // Additional UI Elements
     "ui.restaurantInformation": "Informations du Restaurant",
@@ -1999,13 +1931,11 @@ const translations = {
     "menu.categories.starters": "Entrantes",
     "menu.categories.grills": "Parrilla",
     "menu.categories.curryChicken": "Curry de Pollo",
-    "menu.categories.curryBeef": "Curry de Ternera",
     "menu.categories.curryLamb": "Curry de Cordero",
     "menu.categories.curryFish": "Curry de Pescado y Gambas",
     "menu.categories.curryVeg": "Curry Vegetariano",
     "menu.categories.bread": "Pan",
     "menu.categories.rice": "Arroz",
-    "menu.categories.desserts": "Postres",
     "menu.categories.drinks": "Bebidas",
 
     // Gallery
@@ -2154,21 +2084,18 @@ const translations = {
     "menu.items.chickenTikka.title": "Pollo Tikka",
     "menu.items.chickenTikka.description":
       "Pollo sin hueso, marinado en yogur y especias y asado hasta que esté jugoso y tierno con un toque de ahumado",
-    "menu.items.tandooriFish.title": "Pescado Tandoori",
-    "menu.items.tandooriFish.description":
-      "Pescado Dorada marinado asado en un tandoor, con sabores ahumados y una mezcla de especias aromáticas",
-    "menu.items.murghSeekhKebab.title": "Murgh Seekh Kebab",
-    "menu.items.murghSeekhKebab.description":
-      "Kebabs de pollo picado asados, sazonados con especias aromáticas",
-    "menu.items.beefSeekhKebab.title": "Ternera Seekh Kebab",
-    "menu.items.beefSeekhKebab.description":
-      "Kebabs de ternera picada asados, sazonados con especias aromáticas",
+    "menu.items.grilledFish.title": "Pescado a la Parrilla",
+    "menu.items.grilledFish.description":
+      "Pescado Dorada marinado y asado en un tandoor, con un sabor ahumado conservando su sabor natural (con espinas)",
     "menu.items.chickenHariyaliTikka.title": "Pollo Hariyali Tikka",
     "menu.items.chickenHariyaliTikka.description":
       "Pollo sin hueso, marinado en yogur, menta y cilantro y asado hasta que esté jugoso y tierno",
     "menu.items.tandooriChicken.title": "Pollo Tandoori",
     "menu.items.tandooriChicken.description":
       "Pollo marinado en una mezcla de yogur y especias, luego asado en un tandoor para un acabado ahumado y sabroso",
+    "menu.items.paneerTikka.title": "Paneer Tikka",
+    "menu.items.paneerTikka.description":
+      "Queso indio marinado y asado con especias aromáticas, con un sabor ahumado, tierno y sabroso",
 
     // Menu Items - Chicken Curry
     "menu.items.butterChicken.title": "Pollo con Mantequilla",
@@ -2198,17 +2125,6 @@ const translations = {
     "menu.items.chickenPalak.title": "Pollo Palak",
     "menu.items.chickenPalak.description":
       "Pollo en salsa cremosa de espinacas",
-
-    // Menu Items - Beef Curry
-    "menu.items.beefCurry.title": "Curry de Ternera",
-    "menu.items.beefCurry.description":
-      "Ternera cocinada lentamente en salsa de curry tradicional",
-    "menu.items.beefMadras.title": "Ternera Madras",
-    "menu.items.beefMadras.description":
-      "Curry de ternera picante con coco y hojas de curry",
-    "menu.items.beefVindaloo.title": "Ternera Vindaloo",
-    "menu.items.beefVindaloo.description":
-      "Curry de ternera ardiente con vinagre y especias",
 
     // Menu Items - Lamb Curry
     "menu.items.lambKadhai.title": "Cordero Kadhai",
@@ -2295,9 +2211,6 @@ const translations = {
     "menu.items.chickenBiryani.title": "Biryani de Pollo",
     "menu.items.chickenBiryani.description":
       "Arroz basmati fragante con pollo especiado",
-    "menu.items.beefBiryani.title": "Biryani de Ternera",
-    "menu.items.beefBiryani.description":
-      "Arroz aromático con trozos tiernos de ternera",
     "menu.items.lambBiryani.title": "Biryani de Cordero",
     "menu.items.lambBiryani.description":
       "Arroz aromático con trozos tiernos de cordero",
@@ -2310,14 +2223,6 @@ const translations = {
     "menu.items.biryaniRice.description": "Arroz basmati especiado sin carne",
     "menu.items.zeeraRice.title": "Arroz Zeera",
     "menu.items.zeeraRice.description": "Arroz basmati con semillas de comino",
-
-    // Menu Items - Desserts
-    "menu.items.rasmalai.title": "Rasmalai",
-    "menu.items.rasmalai.description":
-      "Albóndigas de queso cottage en leche dulce con cardamomo",
-    "menu.items.kheer.title": "Kheer",
-    "menu.items.kheer.description":
-      "Pudín de arroz con frutos secos y especias aromáticas",
 
     // Menu Items - Drinks
     "menu.items.mangoLassi.title": "Lassi de Mango",
@@ -2355,16 +2260,25 @@ const translations = {
     "menu.items.pedrasLimao.title": "Pedras Limão 250ml",
     "menu.items.pedrasLimao.description":
       "Agua con gas portuguesa con sabor a limón",
-    "menu.items.pedrasSalgadas250.title": "Pedras Salgadas 250ml",
+    "menu.items.pedrasSalgadas250.title": "Agua con Gas 250ml",
     "menu.items.pedrasSalgadas250.description":
       "Agua mineral con gas portuguesa",
-    "menu.items.pedrasSalgadas500.title": "Pedras Salgadas 500ml",
+    "menu.items.pedrasSalgadas500.title": "Agua con Gas 750ml",
     "menu.items.pedrasSalgadas500.description":
       "Agua mineral con gas portuguesa",
-    "menu.items.water500.title": "Agua 500ml",
+    "menu.items.water500.title": "Agua sin Gas 500ml",
     "menu.items.water500.description": "Agua sin gas",
-    "menu.items.water1500.title": "Agua 1.5L",
+    "menu.items.water1500.title": "Agua sin Gas 1.5L",
     "menu.items.water1500.description": "Agua sin gas botella grande",
+    "menu.items.cafe.title": "Café (Espresso)",
+    "menu.items.cafe.description": "Café espresso",
+    "menu.items.caffeLatte.title": "Caffè Latte",
+    "menu.items.caffeLatte.description": "Espresso con leche vaporizada",
+    "menu.items.americano.title": "Americano",
+    "menu.items.americano.description": "Espresso con agua caliente",
+    "menu.items.infusedTea.title": "Té de Infusión",
+    "menu.items.infusedTea.description":
+      "Negro, verde, jengibre limón, menta o manzanilla",
 
     // Additional UI Elements
     "ui.restaurantInformation": "Información del Restaurante",

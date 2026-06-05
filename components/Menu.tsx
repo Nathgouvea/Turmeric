@@ -21,13 +21,11 @@ const Menu = () => {
       name: t("menu.categories.curryChicken"),
       icon: "🍗",
     },
-    { id: "curry-beef", name: t("menu.categories.curryBeef"), icon: "🥩" },
     { id: "curry-lamb", name: t("menu.categories.curryLamb"), icon: "🐑" },
     { id: "curry-fish", name: t("menu.categories.curryFish"), icon: "🐟" },
     { id: "curry-veg", name: t("menu.categories.curryVeg"), icon: "🥬" },
     { id: "bread", name: t("menu.categories.bread"), icon: "🥖" },
     { id: "rice", name: t("menu.categories.rice"), icon: "🍚" },
-    { id: "desserts", name: t("menu.categories.desserts"), icon: "🍰" },
     { id: "drinks", name: t("menu.categories.drinks"), icon: "🥤" },
   ];
 
@@ -35,182 +33,160 @@ const Menu = () => {
     starters: [
       {
         name: t("menu.items.soupOfTheDay.title"),
-        price: "€3.5",
+        price: "€4",
         description: t("menu.items.soupOfTheDay.description"),
       },
       {
         name: t("menu.items.turmericChickenLollypop.title"),
-        price: "€6",
+        price: "€6.5",
         description: t("menu.items.turmericChickenLollypop.description"),
         popular: true,
       },
       {
         name: t("menu.items.chickenSamosa.title"),
-        price: "€3",
+        price: "€3.5",
         description: t("menu.items.chickenSamosa.description"),
       },
       {
         name: t("menu.items.vegetableSamosa.title"),
-        price: "€2.5",
+        price: "€3",
         description: t("menu.items.vegetableSamosa.description"),
       },
       {
         name: t("menu.items.onionBhaji.title"),
-        price: "€4",
+        price: "€5",
         description: t("menu.items.onionBhaji.description"),
       },
     ],
     grills: [
       {
         name: t("menu.items.chickenTikka.title"),
-        price: "€13",
+        price: "€13.5",
         description: t("menu.items.chickenTikka.description"),
         popular: true,
       },
       {
-        name: t("menu.items.tandooriFish.title"),
-        price: "€14",
-        description: t("menu.items.tandooriFish.description"),
-      },
-      {
-        name: t("menu.items.murghSeekhKebab.title"),
-        price: "€13",
-        description: t("menu.items.murghSeekhKebab.description"),
-      },
-      {
-        name: t("menu.items.beefSeekhKebab.title"),
-        price: "€14.5",
-        description: t("menu.items.beefSeekhKebab.description"),
+        name: t("menu.items.grilledFish.title"),
+        price: "€15",
+        description: t("menu.items.grilledFish.description"),
       },
       {
         name: t("menu.items.chickenHariyaliTikka.title"),
-        price: "€13",
+        price: "€13.5",
         description: t("menu.items.chickenHariyaliTikka.description"),
       },
       {
         name: t("menu.items.tandooriChicken.title"),
-        price: "€14.5",
+        price: "€15",
         description: t("menu.items.tandooriChicken.description"),
+      },
+      {
+        name: t("menu.items.paneerTikka.title"),
+        price: "€13",
+        description: t("menu.items.paneerTikka.description"),
       },
     ],
     "curry-chicken": [
       {
         name: t("menu.items.butterChicken.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.butterChicken.description"),
         popular: true,
       },
       {
         name: t("menu.items.chickenTikkaMasala.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenTikkaMasala.description"),
       },
       {
         name: t("menu.items.chickenKadhai.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenKadhai.description"),
       },
       {
         name: t("menu.items.chickenCurry.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenCurry.description"),
       },
       {
         name: t("menu.items.chickenKorma.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenKorma.description"),
       },
       {
         name: t("menu.items.chickenVindaloo.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenVindaloo.description"),
       },
       {
         name: t("menu.items.mangoChicken.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.mangoChicken.description"),
       },
       {
         name: t("menu.items.chickenMadras.title"),
-        price: "€13.5",
+        price: "€14.5",
         description: t("menu.items.chickenMadras.description"),
       },
       {
         name: t("menu.items.chickenPalak.title"),
-        price: "€14",
-        description: t("menu.items.chickenPalak.description"),
-      },
-    ],
-    "curry-beef": [
-      {
-        name: t("menu.items.beefCurry.title"),
-        price: "€14",
-        description: t("menu.items.beefCurry.description"),
-      },
-      {
-        name: t("menu.items.beefMadras.title"),
-        price: "€14.5",
-        description: t("menu.items.beefMadras.description"),
-      },
-      {
-        name: t("menu.items.beefVindaloo.title"),
         price: "€15",
-        description: t("menu.items.beefVindaloo.description"),
+        description: t("menu.items.chickenPalak.description"),
       },
     ],
     "curry-lamb": [
       {
         name: t("menu.items.lambKadhai.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.lambKadhai.description"),
       },
       {
         name: t("menu.items.lambCurry.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.lambCurry.description"),
       },
       {
         name: t("menu.items.lambKorma.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.lambKorma.description"),
       },
     ],
     "curry-fish": [
       {
         name: t("menu.items.doradaFishCurry.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.doradaFishCurry.description"),
       },
       {
         name: t("menu.items.prawnMasala.title"),
-        price: "€13.5",
+        price: "€16",
         description: t("menu.items.prawnMasala.description"),
       },
       {
         name: t("menu.items.prawnMalaiCurry.title"),
-        price: "€13.5",
+        price: "€16",
         description: t("menu.items.prawnMalaiCurry.description"),
       },
     ],
     "curry-veg": [
       {
         name: t("menu.items.kadhaiPaneer.title"),
-        price: "€13",
+        price: "€14",
         description: t("menu.items.kadhaiPaneer.description"),
       },
       {
         name: t("menu.items.paneerButterMasala.title"),
-        price: "€13",
+        price: "€14",
         description: t("menu.items.paneerButterMasala.description"),
       },
       {
         name: t("menu.items.palakPaneer.title"),
-        price: "€13",
+        price: "€14",
         description: t("menu.items.palakPaneer.description"),
       },
       {
         name: t("menu.items.matarPaneer.title"),
-        price: "€13",
+        price: "€14",
         description: t("menu.items.matarPaneer.description"),
       },
       {
@@ -267,27 +243,27 @@ const Menu = () => {
       },
       {
         name: t("menu.items.cheeseNaan.title"),
-        price: "€3.5",
+        price: "€4",
         description: t("menu.items.cheeseNaan.description"),
       },
       {
         name: t("menu.items.garlicCheeseNaan.title"),
-        price: "€4",
+        price: "€4.5",
         description: t("menu.items.garlicCheeseNaan.description"),
       },
       {
         name: t("menu.items.paneerKulcha.title"),
-        price: "€4",
+        price: "€4.5",
         description: t("menu.items.paneerKulcha.description"),
       },
       {
         name: t("menu.items.alooKulcha.title"),
-        price: "€4",
+        price: "€4.5",
         description: t("menu.items.alooKulcha.description"),
       },
       {
         name: t("menu.items.peshwariNaan.title"),
-        price: "€4.5",
+        price: "€5",
         description: t("menu.items.peshwariNaan.description"),
       },
       {
@@ -304,28 +280,23 @@ const Menu = () => {
       },
       {
         name: t("menu.items.chickenBiryani.title"),
-        price: "€13",
+        price: "€14.5",
         description: t("menu.items.chickenBiryani.description"),
         popular: true,
       },
       {
-        name: t("menu.items.beefBiryani.title"),
-        price: "€15",
-        description: t("menu.items.beefBiryani.description"),
-      },
-      {
         name: t("menu.items.lambBiryani.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.lambBiryani.description"),
       },
       {
         name: t("menu.items.prawnBiryani.title"),
-        price: "€15",
+        price: "€16",
         description: t("menu.items.prawnBiryani.description"),
       },
       {
         name: t("menu.items.vegetableBiryani.title"),
-        price: "€12",
+        price: "€13",
         description: t("menu.items.vegetableBiryani.description"),
       },
       {
@@ -337,18 +308,6 @@ const Menu = () => {
         name: t("menu.items.zeeraRice.title"),
         price: "€7",
         description: t("menu.items.zeeraRice.description"),
-      },
-    ],
-    desserts: [
-      {
-        name: t("menu.items.rasmalai.title"),
-        price: "€3.5",
-        description: t("menu.items.rasmalai.description"),
-      },
-      {
-        name: t("menu.items.kheer.title"),
-        price: "€2.5",
-        description: t("menu.items.kheer.description"),
       },
     ],
     drinks: [
@@ -369,7 +328,7 @@ const Menu = () => {
       },
       {
         name: t("menu.items.freshOrangeJuice.title"),
-        price: "€3.5",
+        price: "€4",
         description: t("menu.items.freshOrangeJuice.description"),
       },
       {
@@ -379,47 +338,47 @@ const Menu = () => {
       },
       {
         name: t("menu.items.chaai.title"),
-        price: "€2.5",
+        price: "€3",
         description: t("menu.items.chaai.description"),
       },
       {
         name: t("menu.items.cocaCola.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.cocaCola.description"),
       },
       {
         name: t("menu.items.cocaColaZero.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.cocaColaZero.description"),
       },
       {
         name: t("menu.items.fanta.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.fanta.description"),
       },
       {
         name: t("menu.items.sevenUp.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.sevenUp.description"),
       },
       {
         name: t("menu.items.guarana.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.guarana.description"),
       },
       {
         name: t("menu.items.liptonIceTeaMango.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.liptonIceTeaMango.description"),
       },
       {
         name: t("menu.items.liptonIceTeaPeach.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.liptonIceTeaPeach.description"),
       },
       {
         name: t("menu.items.liptonIceTeaLemon.title"),
-        price: "€2",
+        price: "€2.5",
         description: t("menu.items.liptonIceTeaLemon.description"),
       },
       {
@@ -434,18 +393,38 @@ const Menu = () => {
       },
       {
         name: t("menu.items.pedrasSalgadas500.title"),
-        price: "€4",
+        price: "€5",
         description: t("menu.items.pedrasSalgadas500.description"),
       },
       {
         name: t("menu.items.water500.title"),
-        price: "€1.5",
+        price: "€2",
         description: t("menu.items.water500.description"),
       },
       {
         name: t("menu.items.water1500.title"),
         price: "€2.5",
         description: t("menu.items.water1500.description"),
+      },
+      {
+        name: t("menu.items.cafe.title"),
+        price: "€1",
+        description: t("menu.items.cafe.description"),
+      },
+      {
+        name: t("menu.items.caffeLatte.title"),
+        price: "€2.5",
+        description: t("menu.items.caffeLatte.description"),
+      },
+      {
+        name: t("menu.items.americano.title"),
+        price: "€1.5",
+        description: t("menu.items.americano.description"),
+      },
+      {
+        name: t("menu.items.infusedTea.title"),
+        price: "€2",
+        description: t("menu.items.infusedTea.description"),
       },
     ],
   };
